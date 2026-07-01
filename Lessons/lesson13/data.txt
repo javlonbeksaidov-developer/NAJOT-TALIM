@@ -1,0 +1,57 @@
+# 1 argument va parametr
+def user_data(name, age, gender):
+    user = {
+        "name" : name,
+        "age" : age,
+        "gender" : gender
+    }
+    return user
+
+user_info_1 = user_data("Javlon", 21, "male")
+print(user_info_1)
+
+user_info_2 = user_data(age = 21, gender = "male", name = "Javlon")
+print(user_info_2)
+
+# 2 default qiymat
+def greet(name = "Mehmon"):
+    return f"Salom {name}."
+
+res_1 = greet()
+res_2 = greet("Javlonbek")
+
+print(res_1)
+print(res_2)
+
+# 3 
+def yuza_hisobla(eni = 4, boyi = 4):
+    return  eni * boyi
+
+print(yuza_hisobla(2, 5))
+print(yuza_hisobla(2))
+print(yuza_hisobla(boyi = 10))
+
+# 4
+def juftmi(number = -1):
+    if number >= 0:
+        if number % 2 == 0:
+            return True
+        return False
+    else:
+        return 0
+
+print(juftmi(12))
+print(juftmi(13))
+print(juftmi(0))
+print(juftmi())
+
+# 5 *args sum()
+def summa(*sonlar):
+    yigindi = 0
+    for son in sonlar:
+        yigindi += son
+    return yigindi
+
+print(summa(1, 2, 3, 4, 5, 6, 7, 8, 9))
+print(summa(1, 2, 3))
+print(summa())
