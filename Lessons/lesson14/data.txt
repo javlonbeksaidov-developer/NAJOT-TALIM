@@ -1,0 +1,89 @@
+
+# dict
+person = {
+    "fname" : "Javlon",
+    "lname" : "Saidov",
+    "age" : 21,
+    "gender" : "male",
+}
+
+# get() metodi - ma'lumot olish
+print(person.get("fname"))
+print(person.get("lname"))
+print(person.get("age"))
+print(person.get("gender"))
+
+# clear() metodi - ma'lumotlarni tozalab yuboradi
+# person.clear()
+# print(person)
+
+# items() metodi - ma'lumotlarni kalit-qiymat qilib chiqaradi
+print(person.items())
+
+# items() metodi - ma'lumotlarni kalitlarini chiqaradi
+print(person.keys())
+
+# items() metodi - ma'lumotlarni qiymatlarini chiqaradi
+print(person.values())
+
+# tahrirlash
+person["age"] = 20
+print(person)
+
+# copy() metodi
+person_copy = person.copy()
+
+person_copy["fname"] = "Ozoda"
+person_copy["lname"] = "Ozodova"
+person_copy["age"] = 21
+person_copy["gender"] = "famale"
+
+print(person_copy)
+
+# dict
+person = {
+    "fname" : "Javlon",
+    "lname" : "Saidov",
+    "age" : 21,
+    "gender" : "male",
+}
+
+# popitem()
+print(person.popitem())
+print(person)
+
+# update() metodi - mavjud bo'lmagan key-value qo'shadi
+car = {
+    "model" : "matiz",
+    "color" : "black",
+}
+
+car.update({"price" : "12_300_000"})
+print(car)
+
+# setdefault() metodi - mavjud bo'lmasa berilgan qiymatni qaytarib, lo'g'atga qo'shadi
+print(car.setdefault("discount", 3))
+print(car)
+
+
+# 1-misol
+def exam(students):
+    
+    for student, ball in students.items():
+        if ball > 70:
+            print(f"Tabrik, {student.title()} ismli talaba imtixondan o'tdi.")
+        else:
+            print(f"Afsus, {student.title()} ismli talaba imtixondan o'tolmadi.")
+
+
+def main():
+    students = {
+        "Ali" : 85,
+        "Vali" : 72,
+        "Sardor" : 95,
+        "Aziza" : 67,
+    }
+
+    exam(students)
+
+main()
