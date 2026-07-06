@@ -1,0 +1,76 @@
+
+'''tuple'''
+# tartiblangan
+# o'zgarmas
+
+mahsulotlar = (1, 3, 7, "olma", 'salom', 'kitob', "olma", "olma")
+
+# count() metodi
+print(mahsulotlar.count("olma"))
+print(mahsulotlar.count(7))
+print(mahsulotlar.count('tuple'))
+print()
+
+# index() metodi
+print(mahsulotlar.index('kitob'))
+print()
+
+# slicing
+print(mahsulotlar[2:5])
+
+
+'''list'''
+# tartiblangan
+# o'zgaruvchan
+
+cars = ['malibu', 'BMW', 'mercedes', 21, 49, 77]
+
+# print(cars[-1])
+# print(cars[:3])
+# print(cars[3:])
+# print(cars[:])
+# print(cars[::-1])
+
+# ma'lumotlarni o'zgartirish
+cars[3] = 'tayoto'
+cars[4] = 'matiz'
+cars[5] = 'cobalt'
+
+# append() metodi -> element qo'shish
+cars.append('spark')
+
+# insert() metodi -> elementni index bo'yicha qo'shadi
+cars.insert(2, 'captiva')
+
+# remove() metodi -> element o'chirish
+cars.remove("malibu")
+
+# pop() metodi -> elementni index bo'yicha sug'irib oladi va o'zgaruvchiga yuklaydi
+pop_item = cars.pop(-1)
+print(pop_item)
+
+# extend() metodi -> kengaytirish
+# cars.extend('javlon')
+cars.extend(['nexia', 'porj'])
+
+print(cars)
+
+# reverse() metodi
+cars.reverse()
+print(cars)
+
+# sort() metodi
+cars.sort()
+print(cars)
+
+cars.sort(reverse=True)
+print(cars)
+
+# 1
+
+cars = ['malibu', 'BMW', 'mercedes', 'tayoto', 'matiz', 'cobalt', 'nexia', 'porj']
+
+i = 1
+for car in cars:
+    print(f"{i}. {car.title()}")
+    i += 1
