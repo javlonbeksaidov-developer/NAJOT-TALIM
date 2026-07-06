@@ -14,3 +14,9 @@
 - [x] lesson09
 - [x] lesson10
 - [ ] lesson11
+- [x] lesson12
+- [x] lesson13
+- [x] lesson14
+- [x] lesson15
+- [ ] lesson16
+
