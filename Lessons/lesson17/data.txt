@@ -1,0 +1,97 @@
+# 
+hozir = datetime.now()
+
+# print(hozir.date())
+# print(hozir.time())
+# print(f"{hozir.year}-yil")
+# print(f"{hozir.month}-oy")
+# print(f"{hozir.day}-kun")
+# print(f"{hozir.hour}-saot")
+# print(f"{hozir.minute}-minut")
+# print(f"{hozir.second}-sekund")
+
+
+bugun = date.today()
+kun = date(2005, 1, 17)
+
+# print(bugun - kun)
+
+
+str_to_date = date.fromisoformat("2004-12-21")
+# print(str_to_date)
+
+
+time_zone = timezone("")
+print(time_zone)
+
+
+#
+hozir = date.today()
+
+year = int(input("Yil: "))
+month = int(input("Oy: "))
+day = int(input("Kun: "))
+
+t_yil = date(year, month, day)
+
+kun = hozir - t_yil
+kun = str(kun)
+kun = kun[:-14]
+kun = int(kun)
+print(kun)
+
+
+yil = kun // 365
+oy = (kun % 365) // 12
+sana = kun - (yil * 365 + oy *12)
+
+jami = yil * 365 + oy * 12 + sana
+
+print(jami)
+print(yil, oy, sana)
+
+#
+now = datetime.now()
+
+oraliq = timedelta(days=1, hours=1)
+
+print(now - oraliq)
+print(now + oraliq)
+
+# ''' yangi yil '''
+now = datetime(2026, 7, 13)
+
+new_year = datetime(2027, 1, 1)
+
+day = int(input("Kun kiriting: "))
+zamon = int(input("(Kelajak - 1) yoki (O'tmish - 0)\n"))
+
+oraliq = timedelta(days=day)
+
+if zamon == 0:
+    kun = now - oraliq
+else:
+    kun = now + oraliq
+
+print(f"Hozir vaqt: {now.year}-yil {now.month}-oy {now.day}-kun.")
+
+print(f"{day} kun: {kun.year}-yil {kun.month}-oy {kun.day}-kunga to'g'ri keladi.")
+
+if new_year > kun:
+    print(f"{(new_year - kun).days} kun qoldi yangi yilga")
+elif new_year == kun:
+    print("Bugun yangi yil.")
+else:
+    print(f"{(kun - new_year).days} kun  o'tib ketdi yangi yildan.")
+
+
+# ''' Yaroqlik muddat '''
+now = datetime.now()
+
+kun = int(input("Yaroqlik muddati kunda: "))
+
+oraliq = timedelta(days=kun)
+
+muddat = now + oraliq
+
+print(f"Berilgan mahsulot {muddat.date()} gacha yaroqli hisoblanadi.")
