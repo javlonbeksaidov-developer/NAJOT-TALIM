@@ -1,0 +1,114 @@
+# 1 ZeroDivisionError
+try:
+    10/0
+except ZeroDivisionError:
+    print("ZeroDivisionError")
+
+# 2 TypeError
+try:
+    "5" + 5
+except TypeError:
+    print("TypeError")
+
+# 3 FileNotFoundError
+try:
+    with open("test.txt", 'r') as file:
+        data = file.read()
+except FileNotFoundError:
+    print("FileNotFoundError")
+
+# 4 KeyError
+data = {
+    "1" : 1,
+    "2" : 2,
+}
+
+try:
+    choose = data['name']
+except KeyError:
+    print("KeyError")
+
+# 5 ValueError
+try:
+    son = int(input())
+except ValueError:                     
+    print("ValueError")
+
+
+# 6 Exception as error
+try:
+    son = int(input())
+except Exception as error:
+    print(error)
+
+# 7 sxema
+try:
+    pass
+except Exception as error:
+    print(error)
+else:
+    pass
+finally:
+    pass
+
+# calculator
+
+
+
+def yigindi(a, b):
+    return a + b
+
+def ayirma(a, b):
+    return a - b
+
+def kopaytma(a, b):
+    return a * b
+
+def bolinma(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Nolga bo'linmaydi."
+
+def main():
+    print("=== Calculator ===\n")
+    while True:
+        try:
+            son_1 = int(input("Birinchi son: "))
+        except ValueError:
+            print("Noto'g'ri qiymat")
+
+        while True:
+            amal = input("Amal (+) (-) (*) (/): ")
+
+            if amal not in "+-/*":
+                print("Noto'g'ri amal!\n")
+                continue
+            else:
+                break
+
+        try:            
+            son_2 = int(input("Ikkinchi son: "))
+        except ValueError:
+            print("Noto'g'ri qiymat")
+        
+        if amal == "+":
+            result = yigindi(son_1, son_2)
+        elif amal == "-":
+            result = ayirma(son_1, son_2)
+        elif amal == "/":
+            result = bolinma(son_1, son_2)
+        elif amal == "*":
+            result = kopaytma(son_1, son_2)
+        else:
+            print("Noto'g'ri amal")
+
+        print(f"Natija: {son_1} {amal} {son_2} = {result}")
+
+        yana = input("\nDavom ettirasizmi? (yes/no)").strip().lower()
+        if yana == "no":
+            break
+
+
+if __name__ == "__main__":
+    main()
