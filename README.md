@@ -19,5 +19,6 @@
 - [x] lesson14
 - [x] lesson15
 - [x] lesson16
-- [ ] lesson17
+- [x] lesson17
+- [ ] lesson18
 
