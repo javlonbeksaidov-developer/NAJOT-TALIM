@@ -1,0 +1,31 @@
+''' Fayllarga ma'lumot yozish '''
+# open / with open
+
+''' TXT '''
+# open
+file = open("db.txt", "w")
+file.write("write")
+file.close()
+
+# with open  | w
+with open("db.txt", 'w') as file:
+    file.write("write")
+
+# with open  | a
+with open("db.txt", 'a') as file:
+    file.write("append")
+
+# with open  | r    | read()
+with open("db.txt", 'r') as file:
+    data = file.read()
+    print(data)
+
+# with open  | r    |  readline()
+with open("db.txt", 'r') as file:
+    data = file.readline()
+    print(data)
+
+# with open  | r    |  readlines()
+with open("db.txt", 'r') as file:
+    data = file.readlines()
+    print(data)
