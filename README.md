@@ -28,12 +28,12 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 |:-:|:------:|--------------|-------------|:----:|
 | 1 | lesson01 | Git and Terminal 1-qism | GitBash komandalarini o'rganish. pwd, cd, ls, mkdir, touch | 11.05.2026 |
 | 2 | lesson02 | Git and Terminal 2-qism | GitBash komandalarini o'rganish. pwd, cd, ls, mkdir, touch | 13.05.2026 |
-| 3 | lesson03 | Output and Input | pythonda kiritish va chiqarish operatorlari. print() and input(). | 15.05.2026 |
+| 3 | lesson03 | Output and Input | pythonda kiritish va chiqarish operatorlari.<br>print() and input(). | 15.05.2026 |
 | 4 | lesson04 | python data type | pythonda ma'lumot turlari. int, str, float. | 20.05.2026 |
 | 5 | lesson05 | boolean data type | pythonda mantiqiy qiymatlar. True and False. | 22.05.2026 |
 | 6 | lesson06 | if shart operatori | pythonda shart operatorlar. if-elif-else struktura. | 29.05.2026 |
-| 7 | lesson07 | GitHub | GitHub bilan tanishish. "[GitHub](https://github.com/)". 1. git clone <repo_url>.\n2. git add name(file).\n3.git commit -m "message".\n4. git push | 01.06.2026 |
-| 8 | lesson08 |  Python For Oprator | pythonda sikllarni o'rganish. for i in range(1). | 03.06.2026 |
+| 7 | lesson07 | GitHub | GitHub bilan tanishish. "[GitHub](https://github.com/)".<br>1. git clone <repo_url>.<br>2. git add name(file).<br>3.git commit -m "message".<br>4. git push | 01.06.2026 |
+| 8 | lesson08 |  Python For Oprator | pythonda sikllarni o'rganish.<br>for i in range(n). | 03.06.2026 |
 | 9 | lesson09 | random() kutubxonasi | pythonda random moduli yordamida tasodifiy sonlar yaratish. random(), choice(), randint(), sample(), shuffle(). | 08.06.2026 |
 | 10 | lesson10 | Funksiyalar 1-qism | pythonda funksiyalar bilan ishlash. def. | 10.06.2026 |
 | 11 | lesson11 |-|-|-|
