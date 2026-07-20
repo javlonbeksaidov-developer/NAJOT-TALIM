@@ -45,4 +45,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 17 | lesson17 | Vaqt bilan ishlash | datetime(), date(), time(), timedelta() bilan vaqtni boshqarish. | 13.07.2026 |
 | 18 | lesson18 | Xatolar bilan ishlash | try-exsept-else-finally orqali xatolarni ushlash. | 15.07.2026 |
 | 19 | lesson19 | Fayllar bilan ishlash | .txt va .json fayllariga ma'lumot yozish va o'qish. | 17.07.2026 |
-| 20 | lesson20 | | | |
+| 20 | lesson20 | .env va pip | Vertual muhit o'rnatish va tashqi kutubxona o'rnatish. BeautifulSoup kutubxonasi. | 20.07.2026 |
+| 21 | lesson21 | | | |

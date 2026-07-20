@@ -1,0 +1,9 @@
+Venv vertual muhit
+
+# python -m venv env
+
+# env/Scripts/activate
+
+
+html kodlarini tahlil qiladi
+# pip install beautifulsoup4
