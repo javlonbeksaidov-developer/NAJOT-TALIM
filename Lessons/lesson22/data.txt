@@ -1,0 +1,13 @@
+# Car klassi
+class Car:
+    def __init__(self, name, price, color):
+        self.name = name
+        self.price = price
+        self.color = color
+
+
+car1 = Car("matiz", 30000, "red")
+car2 = Car("malibu", 41200, "black")
+car3 = Car("damas", 32400, "white")
+
+print(car1.name)
