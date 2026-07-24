@@ -1,5 +1,6 @@
-from uuid import uuid4
 from datetime import datetime
+from uuid import uuid4
+
 from database import load, save
 
 
@@ -9,7 +10,7 @@ class Book:
         self.name = name
         self.author = author
         self.price = price
-        self.date = str(datetime.today())
+        self.date = str(datetime.today())  # noqa: DTZ002
 
     def info(self):
         return f"{self.name} kitob. Author: {self.author}. Narxi: {self.price}"
@@ -33,7 +34,7 @@ class Book:
 
         save(data)
 
-        return f"{self.name} kitobi kutubxonaga qo'shildi."
+        return f"{name} kitobi kutubxonaga qo'shildi."
 
     def delete(self):
         data = load()

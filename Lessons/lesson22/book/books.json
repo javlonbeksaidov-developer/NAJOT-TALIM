@@ -12,5 +12,19 @@
         "author": "javlonbek",
         "price": 25000,
         "date": "2026-07-24 19:43:38.707214"
+    },
+    {
+        "id": "96f1b986-9652-4d41-beb4-3037a856b4d6",
+        "name": "javlon",
+        "author": "saidov",
+        "price": 2000,
+        "date": "2026-07-24 22:20:20.132144"
+    },
+    {
+        "id": "d06bfe71-e04f-455c-b690-61b4c90720aa",
+        "name": "kitob",
+        "author": "javlon",
+        "price": 2000,
+        "date": "2026-07-24 22:21:47.864407"
     }
 ]
