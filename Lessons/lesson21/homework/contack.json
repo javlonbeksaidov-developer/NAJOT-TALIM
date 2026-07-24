@@ -1,0 +1,30 @@
+[
+    {
+        "id": "18ef0554-06cc-442d-ae3b-338e14223303",
+        "name": "Javlonbek",
+        "surname": "Saidov",
+        "phone": "991234567",
+        "date": "2026-07-24"
+    },
+    {
+        "id": "0d1fb4fb-ebb3-4025-8f8f-49b44412516d",
+        "name": "yashnar",
+        "surname": "obidov",
+        "phone": "901231231",
+        "date": "2026-07-24"
+    },
+    {
+        "id": "013388df-2599-4a69-92d8-8e2ca9af9cdb",
+        "name": "ronaldo",
+        "surname": "ronaldo",
+        "phone": "9977777777",
+        "date": "2026-07-24"
+    },
+    {
+        "id": "e08b8c4a-7bbd-423e-926b-d8178e9d8491",
+        "name": "messi",
+        "surname": "messi",
+        "phone": "991010101",
+        "date": "2026-07-24"
+    }
+]

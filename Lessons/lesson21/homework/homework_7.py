@@ -1,0 +1,78 @@
+"""7) Robot koordinatasi - (0,0)
+Buyruqlar : UP, DOWN , LEFT , RIGHT
+(-5,-5)
+
+(5,5) dan chiqa olmaydi
+10)
+"""
+
+def up(koordinata):
+    # (0,0) -> (0,+1)
+    if koordinata["y"] != 5:
+        koordinata["y"] += 1
+        return koordinata
+    else:
+        print("y o'q bo'yicha +5 birlikdan oshib ketadi. Boshqa amal bajaring.")
+
+
+def down(koordinata):
+    # (0,0) -> (0,-1)
+    if koordinata["y"] != -5:
+        koordinata["y"] -= 1
+        return koordinata
+    else:
+        print("y o'q bo'yicha -5 birlikdan oshib ketadi. Boshqa amal bajaring.")
+
+
+def left(koordinata):
+    # (0,0) -> (-1,0)
+
+    if koordinata["y"] != -5:
+        koordinata["x"] -= 1
+        return koordinata
+    else:
+        print("x o'q bo'yicha -5 birlikdan oshib ketadi. Boshqa amal bajaring.")
+
+
+def right(koordinata):
+    # (0,0) -> (+1,0)
+    if koordinata["y"] != -5:
+        koordinata["x"] += 1
+        return koordinata
+    else:
+        print("x o'q bo'yicha +5 birlikdan oshib ketadi. Boshqa amal bajaring.")
+
+
+# (0,0) (x,y)
+def main():
+    koordinata = {"x": 0, "y": 0}
+    while True:
+        menu = """
+===== Robot koordinata =====
+
+1. up
+2. down
+3. left
+4. right
+0. Exit
+"""
+        print(menu)
+        tanlov = input(">>> ")
+        if tanlov == "0":
+            break
+        elif tanlov == "1":
+            up(koordinata)
+        elif tanlov == "2":
+            down(koordinata)
+        elif tanlov == "3":
+            left(koordinata)
+        elif tanlov == "4":
+            right(koordinata)
+        else:
+            print("Xato! 1 dan 4 gacha son tanalang.")
+
+    print(f"Koordinata: ({koordinata['x']}:{koordinata['y']})")
+
+
+if __name__ == "__main__":
+    main()
