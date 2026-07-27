@@ -48,4 +48,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 20 | lesson20 | .env va pip | Vertual muhit o'rnatish va tashqi kutubxona o'rnatish. BeautifulSoup kutubxonasi. | 20.07.2026 |
 | 21 | lesson21 | Practice lesson | O'tilgan barcha darslar ustida amaliyotlar, mashqalar yechish. | 22.07.2026 |
 | 22 | lesson22 | OOP | Obyektga yo'naltirilgan dasturlash. (class, __init__, attribut va metod) | 24.07.2026 |
-| 23 | lesson23 | | | |
+| 23 | lesson23 |-|-|-|
+| 24 | lesson24 | EXAM | 2-oy uchun imtihon | 27.07.2026 |
