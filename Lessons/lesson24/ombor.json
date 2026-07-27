@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Noutbuk",
+        "price": 4500000,
+        "quantity": 3
+    },
+    {
+        "name": "Sichqoncha",
+        "price": 80000,
+        "quantity": 15
+    },
+    {
+        "name": "Klavatura",
+        "price": 130000,
+        "quantity": 5
+    }
+]
