@@ -3,7 +3,7 @@
 import calendar
 from datetime import datetime, timedelta
 
-NOW = datetime.now()
+NOW = datetime.now()  # noqa: DTZ005
 
 
 def calculate_age():
@@ -61,9 +61,9 @@ def birth_day():
 
 def birthday():
     year, month, day = birth_day()
-    birthday = datetime(year=year, month=month, day=day)
-    new_year = datetime(year=2026, month=month, day=day)
-    now = datetime(year=NOW.year, month=NOW.month, day=NOW.day)
+    birthday = datetime(year=year, month=month, day=day)  # noqa: DTZ001
+    new_year = datetime(year=2026, month=month, day=day)  # noqa: DTZ001
+    now = datetime(year=NOW.year, month=NOW.month, day=NOW.day)  # noqa: DTZ001
 
     farq = abs(now - new_year)
     days = timedelta(farq.days)
