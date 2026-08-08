@@ -1,5 +1,3 @@
-from typing import Optional, Union
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -12,9 +10,10 @@ class Product(BaseModel):
 
 class ApiResponceStandart(BaseModel):
     message: str
-    error: Optional[str] = None
-    data: Union[dict, list]
+    error: str | None = None
+    data: dict | list
     success: bool = True
+
 
 app = FastAPI()
 
