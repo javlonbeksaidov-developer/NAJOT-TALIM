@@ -54,5 +54,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 26 | lesson26 | OOP | OOP da 4ta ustun:<br>~1.Encapsulation (Ma'lumotlarni yashirish).<br>~2.Abstraction (Mavhumlik).<br>~3.Inheritance (Meros olish).<br>~4.Polymorphism (Ko'p shakllilik).| 31.07.2026 |
 | 27 | lesson27 | Ma'lumotlar bazasi | Database bilan tanishuv. sqlite3 kutubxonasi. SQL da CRUD amallari. | 03.08.2026 |
 | 28 | lesson28 | Ma'lumotlar bazasi | SQLite3 ma'lumotlar bazasi yordamida masalalar | 05.08.2026 |
-| 29 | lesson29 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>1.post metod()<br>1.put metod()<br>1.delete metod() | 07.08.2026 |
+| 29 | lesson29 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
 | 30 | lesson30 |-|-|-|
