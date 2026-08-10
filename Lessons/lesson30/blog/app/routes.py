@@ -1,9 +1,8 @@
 from datetime import datetime
 
-from fastapi import APIRouter
-
 from app.database import load, save
 from app.schemas import PostCreate, PostUpdate
+from fastapi import APIRouter
 
 router = APIRouter()
 

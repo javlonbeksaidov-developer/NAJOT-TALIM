@@ -55,5 +55,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 27 | lesson27 | Ma'lumotlar bazasi | Database bilan tanishuv. sqlite3 kutubxonasi. SQL da CRUD amallari. | 03.08.2026 |
 | 28 | lesson28 | Ma'lumotlar bazasi | SQLite3 ma'lumotlar bazasi yordamida masalalar | 05.08.2026 |
 | 29 | lesson29 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
-| 30 | lesson30 | FastApi Fremwork | FastApi fremwork practect | 10.08.2026 |
+| 30 | lesson30 | FastApi Fremwork | FastApi fremwork practice | 10.08.2026 |
 | 31 | lesson31 |-|-|-|
