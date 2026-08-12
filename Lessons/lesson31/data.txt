@@ -1,0 +1,1 @@
+"Blog uchun FastAPI fremwork va Sqlalchemy database"
