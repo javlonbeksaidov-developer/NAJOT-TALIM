@@ -34,9 +34,9 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 6 | lesson06 | if shart operatori | pythonda shart operatorlar. if-elif-else struktura. | 29.05.2026 |
 | 7 | lesson07 | GitHub | GitHub bilan tanishish. "[GitHub](https://github.com/)".<br>1. git clone <repo_url>.<br>2. git add name(file).<br>3.git commit -m "message".<br>4. git push | 01.06.2026 |
 | 8 | lesson08 |  Python For Oprator | pythonda sikllarni o'rganish.<br>for i in range(n). | 03.06.2026 |
-| 9 | lesson09 | random() kutubxonasi | pythonda random moduli yordamida tasodifiy sonlar yaratish. random(), choice(), randint(), sample(), shuffle(). | 08.06.2026 |
-| 10 | lesson10 | Funksiyalar 1-qism | pythonda funksiyalar bilan ishlash. def. | 10.06.2026 |
-| 11 | lesson11 |-|-|-|
+| 9 | lesson09 | random() kutubxonasi | pythonda random moduli yordamida tasodifiy sonlar yaratish. random(), choice(), randint(), sample(), shuffle(). | 05.06.2026 |
+| 10 | lesson10 | Funksiyalar 1-qism | pythonda funksiyalar bilan ishlash. def | 08.06.2026 |
+| 11 | lesson11 | Practice lesson | Umumiy takrorlash | 10.06.2026 |
 | 12 | lesson12 | EXAM | 1-oy uchun imtihon | 12.06.2026 |
 | 13 | lesson13 | Funksiyalar 2-qism | pythonda funksiyalar mavzusi davomi. argument and parametr. return. *args and **kwargs.  | 01.07.2026 |
 | 14 | lesson14 | dict() | pythonda lug'atlar bilan ishlash. | 06.07.2026 |
@@ -57,5 +57,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 29 | lesson29 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
 | 30 | lesson30 | FastApi Fremwork | FastApi fremwork practice | 10.08.2026 |
 | 31 | lesson31 | ORM & SQLalchemy | SQLite bilan ma'lumotlar bazasi | 12.08.2026 |
-| 32 | lesson32 | Practice | ORM & SQLalchemy | 14.08.2026 |
+| 32 | lesson32 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha | 14.08.2026 |
 | 33 | lesson33 |-|-|-|
