@@ -60,4 +60,6 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 32 | lesson32 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
 | 33 | lesson33 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
 | 34 | lesson34 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (dorixona loyihasi) davomi | 19.08.2026 |
-| 35 | lesson35 |-|-|-|
+| 35 | lesson35 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (dorixona loyihasi) final | 21.08.2026 |
+| 36 | lesson36 |-|-|-|
+
