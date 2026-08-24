@@ -57,9 +57,9 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 29 | lesson29 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
 | 30 | lesson30 | FastApi Fremwork | FastApi fremwork practice | 10.08.2026 |
 | 31 | lesson31 | ORM & SQLalchemy | SQLite bilan ma'lumotlar bazasi | 12.08.2026 |
-| 32 | lesson32 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
-| 33 | lesson33 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
-| 34 | lesson34 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (dorixona loyihasi) davomi | 19.08.2026 |
-| 35 | lesson35 | Practice lesson | ORM & SQLalchemy mavzusida amaliy loyiha (dorixona loyihasi) final | 21.08.2026 |
-| 36 | lesson36 |-|-|-|
-
+| 32 | lesson32 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
+| 33 | lesson33 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
+| 34 | lesson34 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 19.08.2026 |
+| 35 | lesson35 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 21.08.2026 |
+| 36 | lesson36 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) final | 24.08.2026 |
+| 37 | lesson37 |-|-|-|
