@@ -62,4 +62,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 34 | lesson34 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 19.08.2026 |
 | 35 | lesson35 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 21.08.2026 |
 | 36 | lesson36 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) final | 24.08.2026 |
-| 37 | lesson37 |-|-|-|
+| 37 | lesson37 | Database POSTGRESQL | PostgreSQL  | 26.08.2026 |
+| 38 | lesson38 |-|-|-|
