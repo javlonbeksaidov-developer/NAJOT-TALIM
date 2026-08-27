@@ -1,8 +1,9 @@
-class Car:
+class Talaba:
     def __init__(self):
         pass
 
-    def car(self):
+
+class Grades:
+    def __init__(self):
         pass
 
-print(dir(print))

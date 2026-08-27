@@ -1,26 +1,10 @@
-# 1
-https://sqlitebrowser.org/dl/
+<<< Project >>>
 
-DB SQLite management system install
+Project name: "Online Shop"
+
+1. Backend      --->    python
+2. Frontend     --->    terminal (cli)
+3. Database     --->    SQLite3
 
 
-# sql code
-
-
-==== jadvalni yaratish
-1. CREATE TABLE users (id, username, password, bio, url);
-
-==== jadvalga ma'lumot qo'shish
-2. INSERT INTO users VALUES (1, "javlon", 1234, "sj", "https://javlon.com");
-
-==== jadvaldagi ma'lumotni yangilash
-3. UPDATE users SET username="javlonbek" WHERE id = 1; 
-
-==== jadvaldan ma'lumotni o'chirish
-4. DELETE FROM users WHERE id=2;
-
-==== jadvalni o'zini o'chirish
-5. DROP TABLE users
-
-==== jadvaldagi ma'lumotni ko'rish
-6. SELECT * FROM users
+Project file location: << (https://github.com/javlonbeksaidov-developer/online-shop-cli) >>

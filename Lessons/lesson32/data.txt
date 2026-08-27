@@ -1,0 +1,3 @@
+Dorixona kirim chiqim uchun FastApi + SQLite loyihasi
+
+GitHub ushbu repoda yaratilgan <<{{ https://github.com/javlonbeksaidov-developer/pharmacy-sales-project.git }}>>

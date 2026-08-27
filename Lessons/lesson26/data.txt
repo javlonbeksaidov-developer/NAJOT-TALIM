@@ -1,162 +1,26 @@
-                <<< OOP da 4ta ustun >>>
-    1. Encapsulation (Inkapsulatsiya / Ma'lumotlarni yashirish)
-Ma'lumotlar (atributlar) va ular bilan ishlaydigan metodlarni bitta sinf (class) ichida jamlash hamda tashqi aralashuvdan himoya qilish. Javobgarlik va kirish huquqlarini cheklash uchun ishlatiladi (masalan, Python'da _ yoki __ orqali xususiy qilish).
+# 1
+https://sqlitebrowser.org/dl/
 
-    2. Abstraction (Abstraksiya / Mavhumlik)
-Obyektning faqat muhim va zarur bo'lgan xususiyatlarini ko'rsatib, murakkab ichki detallarini foydalanuvchidan yashirish. Bu kodni soddalashtiradi va foydalanuvchiga kerakli interfeysni beradi.
-
-    3. Inheritance (Inheritans / Meros olish)
-Mavjud sinf (Parent/Base class)ning xususiyatlari va metodlarini yangi sinfga (Child/Derived class) o'tkazish. Bu kodni qayta ishlatishga (DRY - Don't Repeat Yourself) yordam beradi.
-
-    4. Polymorphism (Polimorfizm / Ko'p shakllilik)
-Turli xil obyektlarning bir xil nomdagi metodlarga har xil usulda javob qaytarish qobiliyati. Masalan, bir xil speak() metodini Dog sinfi "Vov", Cat sinfi "Miyov" deb bajaradi.
+DB SQLite management system install
 
 
-# Person class
-class Person:
-    def __init__(self, name, surname, username, password):
-        self.name = name
-        self.surname = surname
-        self.username = username
-        self.password = password
+# sql code
 
 
-    def get_password(self):
-        return self.password
+==== jadvalni yaratish
+1. CREATE TABLE users (id, username, password, bio, url);
 
+==== jadvalga ma'lumot qo'shish
+2. INSERT INTO users VALUES (1, "javlon", 1234, "sj", "https://javlon.com");
 
-# Meros olish
-class Room:
-    def __init__(self, number, status):
-        self.number = number
-        self.status = status
+==== jadvaldagi ma'lumotni yangilash
+3. UPDATE users SET username="javlonbek" WHERE id = 1; 
 
-    def change_status(self):
-        self.status = not self.status
+==== jadvaldan ma'lumotni o'chirish
+4. DELETE FROM users WHERE id=2;
 
+==== jadvalni o'zini o'chirish
+5. DROP TABLE users
 
-class Car(Room):
-    def __init__(self, number, status):
-        super().__init__(number, status)
-
-
-
-
-
-# Person, Teacher, Student class
-from uuid import uuid4
-
-
-class Person:
-    def __init__(self, name, surname, phone):
-        self.name = name
-        self.surname = surname
-        self.phone = phone
-        self.__id = uuid4()
-
-    def __str__(self):
-        return f"Full name: {self.name} {self.surname}. Phone number: {self.phone}."
-
-    def get_id(self):
-        return self.__id
-
-
-class Student(Person):
-    def __init__(self, name, surname, phone, username, password, course):
-        super().__init__(name, surname, phone)
-        self.username = username
-        self.password = password
-        self.course = course
-
-    def __str__(self):
-        text = super().__str__()
-        return text
-
-    def set_course(self, value):
-        self.course = value
-
-
-class Teacher(Person):
-    def __init__(self, name, surname, phone, username, password, fan):
-        super().__init__(name, surname, phone)
-        self.username = username
-        self.password = password
-        self.fan = fan
-
-    def set_fan(self, value):
-        self.fan = value
-
-
-person = Person("javlon", "saidov", 991234567)
-student = Student("javlon", "saidov", 991234567, "student", 123456, 4)
-teacher = Teacher("javlon", "saidov", 991234567, "teacher", 123456, "math")
-print(person.get_id())
-print(student.get_id())
-print(teacher.get_id())
-
-
-
-
-# transport, bus, car, bicycle class
-class Transport:
-    def __init__(self, name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni):
-        self.name = name
-        self.tezlik = tezlik
-        self.yoqilgi_hajmi = yoqilgi_hajmi
-        self.odam_soni = odam_soni
-        self.gildirak_soni = gildirak_soni
-
-    def __str__(self):
-        return f"Transport name: {self.name}"
-
-    def info(self):
-        return f"Name: {self.name}, tezlik: {self.tezlik}km/soat. Yoqilg'i hajmi {self.yoqilgi_hajmi}l. Odam son {self.odam_soni}ta sig'adi. G'ildirak soni {self.gildirak_soni}ta."
-
-    def harakat_qilish(self):
-        pass
-
-
-class Car(Transport):
-    def __init__(self, name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni):
-        super().__init__(name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni)
-
-    def harakat_qilish(self):
-        return f"{self.name} yurdi."
-
-
-class Bicycle(Transport):
-    def __init__(self, name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni):
-        super().__init__(name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni)
-
-    def harakat_qilish(self):
-        return f"{self.name} yurdi."
-
-
-class Bus(Transport):
-    def __init__(self, name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni):
-        super().__init__(name, tezlik, yoqilgi_hajmi, odam_soni, gildirak_soni)
-
-    def harakat_qilish(self):
-        return f"{self.name} yurdi."
-
-
-def main():
-    car = Car(name="car", tezlik=180, yoqilgi_hajmi=10, odam_soni=5, gildirak_soni=4)
-    bicycle = Bicycle(name="bicycle", tezlik=15, yoqilgi_hajmi=0, odam_soni=1, gildirak_soni=2)
-    bus = Bus(name="bus", tezlik=150, yoqilgi_hajmi=30, odam_soni=24, gildirak_soni=8)
-
-    print(car)
-    print(bicycle)
-    print(bus)
-
-    print(car.info())
-    print(bicycle.info())
-    print(bus.info())
-
-    print(car.harakat_qilish())
-    print(bicycle.harakat_qilish())
-    print(bus.harakat_qilish())
-
-
-if __name__ == "__main__":
-    main()
+==== jadvaldagi ma'lumotni ko'rish
+6. SELECT * FROM users

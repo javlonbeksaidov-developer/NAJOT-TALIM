@@ -48,19 +48,18 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 20 | lesson20 | .env va pip | Vertual muhit o'rnatish va tashqi kutubxona o'rnatish. BeautifulSoup kutubxonasi. | 20.07.2026 |
 | 21 | lesson21 | Practice lesson | O'tilgan barcha darslar ustida amaliyotlar, mashqalar yechish. | 22.07.2026 |
 | 22 | lesson22 | OOP | Obyektga yo'naltirilgan dasturlash. (class, __init__, attribut va metod) | 24.07.2026 |
-| 23 | lesson23 |-|-|-|
-| 24 | lesson24 | EXAM | 2-oy uchun imtihon | 27.07.2026 |
-| 25 | lesson25 | OOP | OOP methodlari (classmethod, staticmethod, dundermethod, instansmethod)| 29.07.2026 |
-| 26 | lesson26 | OOP | OOP da 4ta ustun:<br>~1.Encapsulation (Ma'lumotlarni yashirish).<br>~2.Abstraction (Mavhumlik).<br>~3.Inheritance (Meros olish).<br>~4.Polymorphism (Ko'p shakllilik).| 31.07.2026 |
-| 27 | lesson27 | Ma'lumotlar bazasi | Database bilan tanishuv. sqlite3 kutubxonasi. SQL da CRUD amallari. | 03.08.2026 |
-| 28 | lesson28 | Ma'lumotlar bazasi | SQLite3 ma'lumotlar bazasi yordamida masalalar | 05.08.2026 |
-| 29 | lesson29 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
-| 30 | lesson30 | FastApi Fremwork | FastApi fremwork practice | 10.08.2026 |
-| 31 | lesson31 | ORM & SQLalchemy | SQLite bilan ma'lumotlar bazasi | 12.08.2026 |
-| 32 | lesson32 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
-| 33 | lesson33 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
-| 34 | lesson34 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 19.08.2026 |
-| 35 | lesson35 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 21.08.2026 |
-| 36 | lesson36 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) final | 24.08.2026 |
-| 37 | lesson37 | Database POSTGRESQL | PostgreSQL  | 26.08.2026 |
-| 38 | lesson38 |-|-|-|
+| 23 | lesson23 | EXAM | 2-oy uchun imtihon | 27.07.2026 |
+| 24 | lesson24 | OOP | OOP methodlari (classmethod, staticmethod, dundermethod, instansmethod)| 29.07.2026 |
+| 25 | lesson25 | OOP | OOP da 4ta ustun:<br>~1.Encapsulation (Ma'lumotlarni yashirish).<br>~2.Abstraction (Mavhumlik).<br>~3.Inheritance (Meros olish).<br>~4.Polymorphism (Ko'p shakllilik).| 31.07.2026 |
+| 26 | lesson26 | Ma'lumotlar bazasi | Database bilan tanishuv. sqlite3 kutubxonasi. SQL da CRUD amallari. | 03.08.2026 |
+| 27 | lesson27 | Ma'lumotlar bazasi | SQLite3 ma'lumotlar bazasi yordamida masalalar | 05.08.2026 |
+| 28 | lesson28 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
+| 29 | lesson29 | FastApi Fremwork | FastApi fremwork practice | 10.08.2026 |
+| 30 | lesson30 | ORM & SQLalchemy | SQLite bilan ma'lumotlar bazasi | 12.08.2026 |
+| 31 | lesson31 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
+| 32 | lesson32 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
+| 33 | lesson33 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 19.08.2026 |
+| 34 | lesson34 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 21.08.2026 |
+| 35 | lesson35 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) final | 24.08.2026 |
+| 36 | lesson36 | PostgreSQL | PostgreSQL bilan tanishuv, o'rnatish | 26.08.2026 |
+| 37 | lesson37 |-|-|-|
