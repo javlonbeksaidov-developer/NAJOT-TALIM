@@ -1,4 +1,4 @@
-# 📚 "Najot Ta'lim" Python Backend Course Notes!
+# 📚 "Najot Ta'lim" Python Backend Course Notes
 
 <table>
 <tr>
