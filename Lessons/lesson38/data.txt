@@ -1,0 +1,1 @@
+Postgres uchun SQL buyruqlari bilan tanishib, foydalanib mashq qilish.
