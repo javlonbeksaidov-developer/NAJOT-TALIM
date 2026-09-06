@@ -1,0 +1,229 @@
+1. Ish vaqti
+Ofis uchun work_schedule jadvalini yarating. open_time va close_time ustunlari TIME bo‘lsin. Kamida 3 ta ish vaqti kiriting.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE work_schedule (open_time time, close_time time);
+
+insert into work_schedule (open_time, close_time) values ('08:00' , '18:00');
+insert into work_schedule (open_time, close_time) values ('08:00' , '18:00');
+insert into work_schedule (open_time, close_time) values ('09:00' , '20:00');
+
+select * from work_schedule;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+2. Yetkazib berish davomiyligi
+delivery_plans jadvalini yarating. name va duration ustunlari bo‘lsin. duration INTERVAL bo‘lsin va 1 kun, 2 kun, 5 kunlik variantlar kiriting.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE delivery_plans (name varchar(50), duration INTERVAL);
+
+insert into delivery_plans (name, duration) values ('first', '1 day');
+insert into delivery_plans (name, duration) values ('second', '2 days');
+insert into delivery_plans (name, duration) values ('third', '5 days');
+
+select * from delivery_plans;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+3. Sana va vaqt
+appointments jadvalini yarating. id va appointment_at ustunlari bo‘lsin. appointment_at TIMESTAMP bo‘lsin va 5 ta uchrashuv kiriting.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE appointments (id SERIAL PRIMARY KEY, appointment_at TIMESTAMP);
+
+insert into appointments (appointment_at) values ('2026-09-06 14:05:00');
+insert into appointments (appointment_at) values ('2026-10-06 14:05:00');
+insert into appointments (appointment_at) values ('2026-11-06 14:05:00');
+insert into appointments (appointment_at) values ('2026-12-06 14:05:00');
+insert into appointments (appointment_at) values ('2026-13-06 14:05:00');
+
+select * from appointments;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+4. UUID bilan mijozlar
+customers jadvalini UUID PRIMARY KEY va DEFAULT gen_random_uuid() bilan yarating. name NOT NULL va email UNIQUE bo‘lsin. 4 ta mijoz kiriting.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE customer (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name varchar(50) NOT NULL , email varchar(50) UNIQUE);
+
+insert into customer (name, email) values ('birinchi', 'birinchi@gmail.com');
+insert into customer (name, email) values ('ikkinchi', 'ikkinchi@gmail.com');
+insert into customer (name, email) values ('uchinchi', 'uchinchi@gmail.com');
+insert into customer (name, email) values ('turtinchi', 'turtinchi@gmail.com');
+insert into customer (name, email) values ('beshinchi', 'beshinchi@gmail.com');
+
+select * from customer;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+5. JSONB mahsulotlar
+products jadvalini yarating. name, price va specifications JSONB ustunlari bo‘lsin. 4 ta mahsulot kiriting va JSONB ichidan brand qiymatini chiqaring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE products (name varchar(50) NOT NULL , price NUMERIC(12,2), specifications JSONB);
+
+insert into products (name, price, specifications) values ('birinchi', '1111.11', '{"one":1}');
+insert into products (name, price, specifications) values ('ikkinchi', '2222.22', '{"one":1, "two":2}');
+insert into products (name, price, specifications) values ('uchinchi', '3333.33', '{"one":1, "two":2, "three":3}');
+insert into products (name, price, specifications) values ('turtinchi', '4444.44', '{"one":1, "two":2, "three":3, "four":4}');
+
+select * from products;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+6. Cheklovlar
+students jadvalini yarating. name NOT NULL, email UNIQUE va age CHECK (age >= 7) bo‘lsin. To‘g‘ri va noto‘g‘ri qiymatlarni kiritib, constraint’larni tekshiring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE students (name varchar(50) NOT NULL , email varchar(50) UNIQUE, age INTEGER CHECK (age >= 7));
+
+insert into students (name, email, age) values ('birinchi', 'birinchi@gmail.com', 8);
+insert into students (name, email, age) values ('ikkinchi', 'ikkinchi@gmail.com', 7);
+insert into students (name, email, age) values ('turtinchi', 'turtinchi@gmail.com', 18);
+
+insert into students (name, email, age) values ('uchinchi', 'uchinchi@gmail.com', 6);
+
+>>> ERROR:  new row for relation "students" violates check constraint "students_age_check". 
+>>> DETAIL:  Failing row contains (uchinchi, uchinchi@gmail.com, 6)
+
+select * from students;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+7. Kutubxona bog‘lanishi 
+authors va books jadvallarini yarating. books.author_id FOREIGN KEY orqali authors.id ga bog‘lansin. Kamida 3 muallif va 5 kitob kiriting.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> AUTHOR
+
+CREATE TABLE authors (id serial PRIMARY KEY, name varchar(50) NOT NULL);
+
+insert into authors (name) values ('birinchi');
+insert into authors (name) values ('ikkinchi');
+insert into authors (name) values ('uchinchi');
+
+select * from authors;
+
+>>> BOOKS
+
+CREATE TABLE books (id serial PRIMARY KEY, name varchar(50) NOT NULL, author_id INTEGER, FOREIGN KEY (author_id)  REFERENCES authors(id));
+
+insert into books (name, author_id) values ('1-book', 1);
+insert into books (name, author_id) values ('2-book', 2);
+insert into books (name, author_id) values ('3-book', 3);
+insert into books (name, author_id) values ('4-book', 2);
+insert into books (name, author_id) values ('5-book', 1);
+
+select * from books;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+8. Online shop buyurtmalari
+customers va orders jadvallarini yarating. orders.customer_id FOREIGN KEY bo‘lsin. total_amount manfiy bo‘lmasin, status faqat new, paid yoki cancelled bo‘lsin.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> xaridor
+
+CREATE TABLE xaridor (id serial PRIMARY KEY, name varchar(50) NOT NULL);
+
+insert into xaridor (name) values ('1-customerss');
+insert into xaridor (name) values ('2-customerss');
+insert into xaridor (name) values ('3-customerss');
+insert into xaridor (name) values ('4-customerss');
+insert into xaridor (name) values ('5-customerss');
+
+select * from xaridor;
+
+>>> buyurtma
+
+CREATE TABLE buyurtma (id serial PRIMARY KEY, name varchar(50) NOT NULL, xaridor_id INTEGER, FOREIGN KEY (xaridor_id)  REFERENCES xaridor(id));
+
+insert into buyurtma (name, xaridor_id) values ('1-book', 1);
+insert into buyurtma (name, xaridor_id) values ('2-book', 2);
+insert into buyurtma (name, xaridor_id) values ('3-book', 3);
+insert into buyurtma (name, xaridor_id) values ('4-book', 2);
+insert into buyurtma (name, xaridor_id) values ('5-book', 1);
+
+select * from buyurtma;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+9. Kuryer tizimi
+orders jadvaliga created_at TIMESTAMP, delivery_time TIME, delivery_duration INTERVAL va extra JSONB qo‘shing. Kamida 6 ta buyurtma kiriting. JSONB ichidan delivery_type yoki address kabi qiymatni oling.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE orders (id serial PRIMARY KEY, name varchar(50) NOT NULL, created_at timestamp DEFAULT CURRENT_TIMESTAMP, delivery_time time, delivery_duration interval, extra jsonb);
+
+insert into orders (name, delivery_time, delivery_duration, extra) values ('1-orders', '16:00', '40 minutes', '{"delivery_type":"car","address":1}');
+insert into orders (name, delivery_time, delivery_duration, extra) values ('2-orders', '16:20', '60 minutes', '{"delivery_type":"car","address":2}');
+insert into orders (name, delivery_time, delivery_duration, extra) values ('3-orders', '16:30', '70 minutes', '{"delivery_type":"car","address":3}');
+insert into orders (name, delivery_time, delivery_duration, extra) values ('4-orders', '16:35', '75 minutes', '{"delivery_type":"car","address":4}');
+insert into orders (name, delivery_time, delivery_duration, extra) values ('5-orders', '16:45', '85 minutes', '{"delivery_type":"car","address":5}');
+insert into orders (name, delivery_time, delivery_duration, extra) values ('6-orders', '16:50', '90 minutes', '{"delivery_type":"car","address":6}');
+
+select * from orders;
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+10. Yakuniy loyiha
+Mini online shop database yarating: customers, products va orders. Customers: UUID, name NOT NULL, email UNIQUE, registered_at TIMESTAMP. Products: name, price CHECK, specifications JSONB. Orders: customer_id FOREIGN KEY, total_amount CHECK, status CHECK, created_at TIMESTAMP, delivery_time TIME, delivery_duration INTERVAL. Kamida 5 customer, 8 product va 10 order kiriting. Keyin noto‘g‘ri qiymatlar bilan INSERT qilib, har bir constraint ishlashini tekshiring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> customersss
+
+CREATE TABLE customersss (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name varchar(50) NOT NULL, email varchar(50) UNIQUE, registered_at timestamp DEFAULT CURRENT_TIMESTAMP);
+
+insert into customersss (name, email) values ('1-customers', '16:00');
+insert into customersss (name, email) values ('2-customers', '16:20');
+insert into customersss (name, email) values ('3-customers', '16:30');
+insert into customersss (name, email) values ('4-customers', '16:35');
+insert into customersss (name, email) values ('5-customers', '16:45');
+
+select * from customersss;
+
+>>> productsss
+
+CREATE TABLE productsss (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name varchar(50) NOT NULL, price NUMERIC(12,2) CHECK (price>=0), specifications jsonb);
+
+insert into productsss (name, price, specifications) values ('1-productsss', 1111.11, '{"color":"red", "1":1}');
+insert into productsss (name, price, specifications) values ('2-productsss', 2222.22, '{"color":"red", "2":2}');
+insert into productsss (name, price, specifications) values ('3-productsss', 3333.33, '{"color":"red", "3":3}');
+insert into productsss (name, price, specifications) values ('4-productsss', 4444.44, '{"color":"red", "4":4}');
+insert into productsss (name, price, specifications) values ('5-productsss', 5555.55, '{"color":"red", "5":5}');
+insert into productsss (name, price, specifications) values ('6-productsss', 6666.66, '{"color":"red", "6":6}');
+insert into productsss (name, price, specifications) values ('7-productsss', 7777.77, '{"color":"red", "7":7}');
+insert into productsss (name, price, specifications) values ('8-productsss', 8888.88, '{"color":"red", "8":8}');
+
+select * from customersss;
+
+>>> ordersss
+
+CREATE TABLE ordersss (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), customer_id uuid NOT NULL, FOREIGN KEY (customer_id) REFERENCES customersss(id), total_amount NUMERIC(12,2) CHECK (total_amount>=0), status BOOLEAN, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, delivery_time time, delivery_duration interval);
+
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('40bf9515-5aae-4119-b352-f0bfc021edc3', 1111.11, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('cb8d0ca4-91cf-46d7-8304-5f87170605b4', 2222.22, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('e9f16db9-0402-42f3-b37b-dd56dc74dddd', 3333.33, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('40bf9515-5aae-4119-b352-f0bfc021edc3', 4444.44, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('be4ac4d2-09b7-4557-bab7-3ba3c5961fa7', 5555.55, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('cb8d0ca4-91cf-46d7-8304-5f87170605b4', 6666.66, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('3593245f-d53b-4d5b-9c09-ef07a7577925', 7777.77, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('40bf9515-5aae-4119-b352-f0bfc021edc3', 8888.88, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('be4ac4d2-09b7-4557-bab7-3ba3c5961fa7', 7777.77, true, '18:00', '1 day');
+insert into ordersss (customer_id, total_amount, status, delivery_time, delivery_duration) values ('3593245f-d53b-4d5b-9c09-ef07a7577925', 8888.88, true, '18:00', '1 day');
+
+select * from ordersss;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
