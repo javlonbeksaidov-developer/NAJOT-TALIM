@@ -1,0 +1,36 @@
+1) Online shop uchun products, customers va orders jadvallarini yarating. 
+# ID'larni avtomatik generatsiya qiling va 
+# har bir jadvalga kamida 10 tadan ma'lumot kiriting. 
+# Keyin products jadvalidagi quantity ustunini stock ga
+#  o‘zgartiring va description ustunini qo‘shib, keyinchalik olib tashlang.
+
+# 2) Universitet uchun students jadvalini yarating. 
+# Keyinchalik universitet talabi o‘zgaradi: age kerak emas, 
+# uning o‘rniga birth_date ishlatilishi kerak; phone qo‘shilishi kerak; 
+# email ustunining nomi o‘zgartirilishi kerak. 
+# Barcha o‘zgarishlarni ALTER TABLE orqali bajaring.
+
+# 3) Bank uchun customers va accounts jadvallarini yarating. 
+# Customer UUID orqali aniqlansin. Account uchun alohida sequence ishlating. 
+# Har bir customer bir nechta accountga ega bo‘lishi mumkin bo‘lgan 
+# struktura yarating.
+
+# 4) Food delivery tizimi uchun order jadvalini yarating. 
+# Har bir orderda UUID, customer ma'lumotlari, '
+# order yaratilgan TIMESTAMP, yetkazib berish davomiyligi INTERVAL, 
+# yetkazib berish vaqti TIME va qo‘shimcha ma'lumotlar JSON ko‘rinishida saqlansin. 
+# Kamida 15 ta order kiriting.
+
+# 5) Online supermarket uchun customers, categories, 
+# products va orders jadvallarini loyihalang. 
+# Mahsulotlar kategoriya bilan bog‘lansin, 
+# order customer va product bilan bog‘lansin. 
+# Har bir jadval uchun mos data type, 
+# avtomatik ID va kerakli ustunlarni tanlang.
+
+# 6) students jadvalini yarating va undan foydalanib 
+# excellent_students nomli yangi jadval hosil qiling. 
+# Faqat barcha fanlardan yuqori natija ko‘rsatgan studentlar yangi jadvalga tushsin. 
+# Keyin original students jadvalining strukturasi o‘zgartirilsin: 
+# yangi ustun qo‘shilsin, mavjud ustun rename qilinsin va keraksiz ustun 
+# olib tashlansin.
