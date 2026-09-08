@@ -4,6 +4,84 @@
 # Keyin products jadvalidagi quantity ustunini stock ga
 #  o‘zgartiring va description ustunini qo‘shib, keyinchalik olib tashlang.
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>> PRODUCTS
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    price NUMERIC(10,2) NOT NULL,
+    quantity INTEGER NOT NULL
+);
+
+INSERT INTO products (name, price, quantity) VALUES
+('Laptop Lenovo', 850.00, 15),
+('iPhone 15', 999.00, 10),
+('Samsung Galaxy S24', 899.00, 20),
+('Wireless Mouse', 25.50, 50),
+('Keyboard', 45.00, 35),
+('Headphones', 75.00, 25),
+('Monitor LG', 250.00, 12),
+('USB Flash 64GB', 12.00, 100),
+('Power Bank', 35.00, 40),
+('Web Camera', 60.00, 18);
+
+>>>>>>>>>>>>>> CUSTOMERS
+
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(20)
+);
+
+INSERT INTO customers (full_name, email, phone) VALUES
+('Ali Valiyev', 'ali@gmail.com', '+998901111111'),
+('Vali Aliyev', 'vali@gmail.com', '+998902222222'),
+('Sardor Karimov', 'sardor@gmail.com', '+998903333333'),
+('Jasur Akmalov', 'jasur@gmail.com', '+998904444444'),
+('Bekzod Xasanov', 'bekzod@gmail.com', '+998905555555'),
+('Aziz Sobirov', 'aziz@gmail.com', '+998906666666'),
+('Dilshod Rahimov', 'dilshod@gmail.com', '+998907777777'),
+('Sherzod Qodirov', 'sherzod@gmail.com', '+998908888888'),
+('Bobur Ergashev', 'bobur@gmail.com', '+998909999999'),
+('Kamron Saidov', 'kamron@gmail.com', '+998901010101');
+
+>>>>>>>>>>>>>> ORDERS
+
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    customer_id INTEGER REFERENCES customers(id),
+    product_id INTEGER REFERENCES products(id),
+    order_date DATE DEFAULT CURRENT_DATE,
+    quantity INTEGER NOT NULL
+);
+
+INSERT INTO orders (customer_id, product_id, quantity) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 2),
+(4, 4, 3),
+(5, 5, 1),
+(6, 6, 2),
+(7, 7, 1),
+(8, 8, 5),
+(9, 9, 2),
+(10, 10, 1);
+
+>>>>>>>>>>>>>>
+
+ALTER TABLE products
+ADD COLUMN description TEXT;
+
+>>>>>>>>>>>>>>
+
+ALTER TABLE products
+DROP COLUMN description;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 # 2) Universitet uchun students jadvalini yarating. 
 # Keyinchalik universitet talabi o‘zgaradi: age kerak emas, 
 # uning o‘rniga birth_date ishlatilishi kerak; phone qo‘shilishi kerak; 
