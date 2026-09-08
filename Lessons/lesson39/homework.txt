@@ -88,16 +88,285 @@ DROP COLUMN description;
 # email ustunining nomi o‘zgartirilishi kerak. 
 # Barcha o‘zgarishlarni ALTER TABLE orqali bajaring.
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    age INTEGER,
+    email VARCHAR(100),
+    group_name VARCHAR(50)
+);
+
+>>>>>>>>>>>>>>
+
+ALTER TABLE students
+DROP COLUMN age;
+
+>>>>>>>>>>>>>>
+
+ALTER TABLE students
+ADD COLUMN birth_date DATE;
+
+>>>>>>>>>>>>>>
+
+ALTER TABLE students
+ADD COLUMN phone VARCHAR(20);
+
+>>>>>>>>>>>>>>
+
+ALTER TABLE students
+RENAME COLUMN email TO email_address;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 # 3) Bank uchun customers va accounts jadvallarini yarating. 
 # Customer UUID orqali aniqlansin. Account uchun alohida sequence ishlating. 
 # Har bir customer bir nechta accountga ega bo‘lishi mumkin bo‘lgan 
 # struktura yarating.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+CREATE TABLE customers (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    full_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    email VARCHAR(100) UNIQUE
+);
+
+>>>>>>>>>>>>>>
+
+CREATE SEQUENCE account_id_seq
+START 1000
+INCREMENT 1;
+
+>>>>>>>>>>>>>>
+
+CREATE TABLE accounts (
+    id INTEGER PRIMARY KEY DEFAULT nextval('account_id_seq'),
+    customer_id UUID NOT NULL,
+    account_number VARCHAR(30) UNIQUE NOT NULL,
+    balance NUMERIC(15,2) DEFAULT 0,
+    account_type VARCHAR(30),
+
+    CONSTRAINT fk_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(id)
+);
+
+>>>>>>>>>>>>>>
+
+INSERT INTO customers (full_name, phone, email) VALUES
+('Ali Valiyev', '+998901111111', 'ali@bank.com'),
+('Vali Karimov', '+998902222222', 'vali@bank.com'),
+('Sardor Xasanov', '+998903333333', 'sardor@bank.com'),
+('Jasur Sobirov', '+998904444444', 'jasur@bank.com'),
+('Bekzod Rahimov', '+998905555555', 'bekzod@bank.com');
+
+>>>>>>>>>>>>>>
+
+INSERT INTO accounts
+(customer_id, account_number, balance, account_type)
+SELECT id, 'UZ10001', 5000000, 'CARD'
+FROM customers
+WHERE email = 'ali@bank.com';
+
+>>>>>>>>>>>>>>
+
+INSERT INTO accounts
+(customer_id, account_number, balance, account_type)
+SELECT id, 'UZ10002', 2500000, 'SAVINGS'
+FROM customers
+WHERE email = 'ali@bank.com';
+
+>>>>>>>>>>>>>>
+
+INSERT INTO accounts
+(customer_id, account_number, balance, account_type)
+SELECT id, 'UZ10003', 7000000, 'CARD'
+FROM customers
+WHERE email = 'vali@bank.com';
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # 4) Food delivery tizimi uchun order jadvalini yarating. 
 # Har bir orderda UUID, customer ma'lumotlari, '
 # order yaratilgan TIMESTAMP, yetkazib berish davomiyligi INTERVAL, 
 # yetkazib berish vaqti TIME va qo‘shimcha ma'lumotlar JSON ko‘rinishida saqlansin. 
 # Kamida 15 ta order kiriting.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+CREATE TABLE food_orders (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    customer_name VARCHAR(100) NOT NULL,
+    customer_phone VARCHAR(20) NOT NULL,
+    customer_address TEXT NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    delivery_duration INTERVAL,
+
+    delivery_time TIME,
+
+    additional_info JSONB
+);
+
+>>>>>>>>>>>>>>
+
+INSERT INTO food_orders
+(
+    customer_name,
+    customer_phone,
+    customer_address,
+    created_at,
+    delivery_duration,
+    delivery_time,
+    additional_info
+)
+VALUES
+(
+    'Ali Valiyev',
+    '+998901111111',
+    'Toshkent, Chilonzor',
+    CURRENT_TIMESTAMP,
+    INTERVAL '35 minutes',
+    '13:30',
+    '{"payment": "cash", "comment": "Door delivery"}'
+),
+(
+    'Vali Karimov',
+    '+998902222222',
+    'Toshkent, Yunusobod',
+    CURRENT_TIMESTAMP,
+    INTERVAL '40 minutes',
+    '14:00',
+    '{"payment": "card", "comment": "No onions"}'
+),
+(
+    'Sardor Xasanov',
+    '+998903333333',
+    'Toshkent, Shayxontohur',
+    CURRENT_TIMESTAMP,
+    INTERVAL '25 minutes',
+    '12:30',
+    '{"payment": "cash"}'
+),
+(
+    'Jasur Akmalov',
+    '+998904444444',
+    'Toshkent, Mirzo Ulugbek',
+    CURRENT_TIMESTAMP,
+    INTERVAL '30 minutes',
+    '15:00',
+    '{"payment": "card", "comment": "Fast delivery"}'
+),
+(
+    'Bekzod Sobirov',
+    '+998905555555',
+    'Toshkent, Sergeli',
+    CURRENT_TIMESTAMP,
+    INTERVAL '45 minutes',
+    '16:00',
+    '{"payment": "cash"}'
+),
+(
+    'Aziz Rahimov',
+    '+998906666666',
+    'Toshkent, Yakkasaroy',
+    CURRENT_TIMESTAMP,
+    INTERVAL '20 minutes',
+    '18:30',
+    '{"payment": "card"}'
+),
+(
+    'Dilshod Qodirov',
+    '+998907777777',
+    'Toshkent, Mirobod',
+    CURRENT_TIMESTAMP,
+    INTERVAL '35 minutes',
+    '19:00',
+    '{"payment": "cash", "comment": "Call before arrival"}'
+),
+(
+    'Sherzod Ergashev',
+    '+998908888888',
+    'Toshkent, Olmazor',
+    CURRENT_TIMESTAMP,
+    INTERVAL '50 minutes',
+    '19:30',
+    '{"payment": "card"}'
+),
+(
+    'Bobur Saidov',
+    '+998909999999',
+    'Toshkent, Uchtepa',
+    CURRENT_TIMESTAMP,
+    INTERVAL '30 minutes',
+    '20:00',
+    '{"payment": "cash"}'
+),
+(
+    'Kamron Aliyev',
+    '+998901010101',
+    'Toshkent, Bektemir',
+    CURRENT_TIMESTAMP,
+    INTERVAL '40 minutes',
+    '20:30',
+    '{"payment": "card", "comment": "Leave at reception"}'
+),
+(
+    'Otabek Karimov',
+    '+998902020202',
+    'Toshkent, Yunusobod',
+    CURRENT_TIMESTAMP,
+    INTERVAL '25 minutes',
+    '21:00',
+    '{"payment": "cash"}'
+),
+(
+    'Umid Xasanov',
+    '+998903030303',
+    'Toshkent, Chilonzor',
+    CURRENT_TIMESTAMP,
+    INTERVAL '35 minutes',
+    '21:15',
+    '{"payment": "card"}'
+),
+(
+    'Farrux Sobirov',
+    '+998904040404',
+    'Toshkent, Sergeli',
+    CURRENT_TIMESTAMP,
+    INTERVAL '45 minutes',
+    '21:30',
+    '{"payment": "cash", "comment": "Ring the bell"}'
+),
+(
+    'Islom Rahimov',
+    '+998905050505',
+    'Toshkent, Mirobod',
+    CURRENT_TIMESTAMP,
+    INTERVAL '30 minutes',
+    '22:00',
+    '{"payment": "card"}'
+),
+(
+    'Rustam Qodirov',
+    '+998906060606',
+    'Toshkent, Shayxontohur',
+    CURRENT_TIMESTAMP,
+    INTERVAL '40 minutes',
+    '22:30',
+    '{"payment": "cash", "comment": "Extra sauce"}'
+);
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # 5) Online supermarket uchun customers, categories, 
 # products va orders jadvallarini loyihalang. 
@@ -106,9 +375,160 @@ DROP COLUMN description;
 # Har bir jadval uchun mos data type, 
 # avtomatik ID va kerakli ustunlarni tanlang.
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE supermarket_customers (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(20),
+    address TEXT
+);
+
+>>>>>>>>>>>>>>
+
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    description TEXT
+);
+
+>>>>>>>>>>>>>>
+
+CREATE TABLE supermarket_products (
+    id SERIAL PRIMARY KEY,
+    category_id INTEGER NOT NULL,
+
+    name VARCHAR(150) NOT NULL,
+    price NUMERIC(10,2) NOT NULL,
+    stock INTEGER DEFAULT 0,
+
+    FOREIGN KEY (category_id)
+        REFERENCES categories(id)
+);
+
+>>>>>>>>>>>>>>
+
+CREATE TABLE supermarket_orders (
+    id SERIAL PRIMARY KEY,
+
+    customer_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+
+    quantity INTEGER NOT NULL,
+    total_price NUMERIC(12,2),
+
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (customer_id)
+        REFERENCES supermarket_customers(id),
+
+    FOREIGN KEY (product_id)
+        REFERENCES supermarket_products(id)
+);
+
+>>>>>>>>>>>>>>
+
+CREATE TABLE supermarket_orders (
+    id SERIAL PRIMARY KEY,
+
+    customer_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+
+    quantity INTEGER NOT NULL,
+    total_price NUMERIC(12,2),
+
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (customer_id)
+        REFERENCES supermarket_customers(id),
+
+    FOREIGN KEY (product_id)
+        REFERENCES supermarket_products(id)
+);
+
+>>>>>>>>>>>>>>
+
+INSERT INTO supermarket_customers
+(full_name, email, phone, address)
+VALUES
+('Ali Valiyev', 'ali@shop.com', '+998901111111', 'Chilonzor'),
+('Vali Karimov', 'vali@shop.com', '+998902222222', 'Yunusobod'),
+('Sardor Xasanov', 'sardor@shop.com', '+998903333333', 'Sergeli');
+
+>>>>>>>>>>>>>>
+
+INSERT INTO supermarket_products
+(category_id, name, price, stock)
+VALUES
+(1, 'Apple', 15000, 100),
+(1, 'Banana', 18000, 80),
+(2, 'Potato', 7000, 200),
+(2, 'Tomato', 12000, 150),
+(3, 'Coca Cola', 12000, 100),
+(3, 'Pepsi', 11000, 90),
+(4, 'Milk', 10000, 70),
+(4, 'Cheese', 45000, 40),
+(5, 'Bread', 4000, 200),
+(5, 'Cake', 55000, 20);
+
+>>>>>>>>>>>>>>
+
+INSERT INTO supermarket_orders
+(customer_id, product_id, quantity, total_price)
+VALUES
+(1, 1, 2, 30000),
+(1, 5, 3, 36000),
+(2, 3, 5, 35000),
+(2, 7, 2, 20000),
+(3, 2, 3, 54000),
+(3, 8, 1, 45000);
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 # 6) students jadvalini yarating va undan foydalanib 
 # excellent_students nomli yangi jadval hosil qiling. 
 # Faqat barcha fanlardan yuqori natija ko‘rsatgan studentlar yangi jadvalga tushsin. 
 # Keyin original students jadvalining strukturasi o‘zgartirilsin: 
 # yangi ustun qo‘shilsin, mavjud ustun rename qilinsin va keraksiz ustun 
 # olib tashlansin.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    math INTEGER,
+    english INTEGER,
+    programming INTEGER,
+    age INTEGER
+);
+
+>>>>>>>>>>>>>>
+
+INSERT INTO students
+(full_name, math, english, programming, age)
+VALUES
+('Ali Valiyev', 95, 92, 98, 20),
+('Vali Karimov', 88, 90, 85, 21),
+('Sardor Xasanov', 97, 96, 94, 20),
+('Jasur Akmalov', 70, 85, 80, 22),
+('Bekzod Sobirov', 91, 93, 95, 21),
+('Aziz Rahimov', 65, 70, 75, 20),
+('Dilshod Qodirov', 99, 98, 97, 22),
+('Sherzod Ergashev', 82, 87, 90, 21),
+('Bobur Saidov', 96, 95, 99, 20),
+('Kamron Aliyev', 75, 80, 78, 22);
+
+>>>>>>>>>>>>>>
+
+CREATE TABLE excellent_students AS
+SELECT *
+FROM students
+WHERE math >= 90
+  AND english >= 90
+  AND programming >= 90;
+
+SELECT * FROM excellent_students;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
