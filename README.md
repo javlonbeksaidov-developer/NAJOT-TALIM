@@ -65,4 +65,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 37 | lesson37 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. | 28.08.2026 |
 | 38 | lesson38 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. | 04.09.2026 |
 | 39 | lesson39 | Practice lesson | PostgreSQL uchun SQL buyruqlari orqali misol va masalalar yechish. | 07.09.2026 |
-| 40 | lesson40 |-|-|-|
+| 40 | lesson40 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. | 09.09.2026 |
+| 41 | lesson41 |-|-|-|
