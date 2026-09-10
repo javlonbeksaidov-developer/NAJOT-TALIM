@@ -4,26 +4,40 @@
 1. Mahsulotlar ro‘yxati
 products jadvalidan barcha mahsulotlarning name va price ustunlarini chiqaring.
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 SELECT name, price
 FROM products;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 2. Narx bo‘yicha saralash
 Mahsulotlarni price bo‘yicha kattadan kichikka tartiblang va name hamda price ni chiqaring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT name, price
 FROM products
 ORDER BY price DESC;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 3. Arzon mahsulotlar
 price qiymati 50 dan kichik bo‘lgan mahsulotlarni toping va narx bo‘yicha o‘sish tartibida chiqaring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT name, price
 FROM products
 WHERE price < 50
 ORDER BY price ASC;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 4. Eng qimmat mahsulotlar
 Mavjud mahsulotlar ichidan eng qimmat 5 tasini toping. Ustunlarga tushunarli alias bering.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT
     name AS product_name,
@@ -32,30 +46,46 @@ FROM products
 ORDER BY price DESC
 LIMIT 5;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 5. Kategoriya tanlash
 Electronics yoki Stationery kategoriyasidagi mahsulotlarni IN yordamida toping va price bo‘yicha kamayish tartibida chiqaring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT name, category, price
 FROM products
 WHERE category IN ('Electronics', 'Stationery')
 ORDER BY price DESC;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 6. Narx oralig‘i
 20 dan 200 gacha bo‘lgan narxdagi mahsulotlarni BETWEEN yordamida toping.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT name, price
 FROM products
 WHERE price BETWEEN 20 AND 200;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 7. Matnli qidiruv
 Nomi ichida `book` so‘zi uchraydigan mahsulotlarni ILIKE yordamida toping.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT name, price
 FROM products
 WHERE name ILIKE '%book%';
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 8. Kategoriya hisoboti
 Har bir category bo‘yicha mahsulotlar soni va jami quantity ni chiqaring. Natijani jami quantity bo‘yicha kamayish tartibida saralang.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT
     category,
@@ -65,8 +95,12 @@ FROM products
 GROUP BY category
 ORDER BY total_quantity DESC;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 9. Guruhlarni filtrlash
 Har bir category bo‘yicha mahsulotlar sonini hisoblang va kamida 2 ta mahsuloti bor kategoriyalarni HAVING yordamida chiqaring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT
     category,
@@ -75,8 +109,12 @@ FROM products
 GROUP BY category
 HAVING COUNT(*) >= 2;
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 10. Mini online-shop hisobot
 Faqat mavjud mahsulotlarni tanlang. Electronics va Furniture kategoriyalarini oling, price 20–500 oralig‘ida bo‘lsin, nomida `o` harfi qatnashsin, price bo‘yicha kamayish tartibida saralang va faqat 5 ta natija chiqaring.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 SELECT
     name,
@@ -90,3 +128,5 @@ WHERE quantity > 0
   AND name ILIKE '%o%'
 ORDER BY price DESC
 LIMIT 5;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
