@@ -1,193 +1,32 @@
-POSTGRESQL — SELECT VA MA'LUMOTLARNI QIDIRISH
-SELECT • ALIASES • ORDER BY • WHERE • LIMIT • FETCH • IN • BETWEEN • LIKE • IS NULL • GROUP BY
-Mavzuni tanishtirish
-Database’da ma'lumotni saqlashdan tashqari, kerakli qator va ustunlarni topish, tartiblash, qidirish, natijani cheklash va ma'lumotlarni guruhlash ham zarur. Bu qo‘llanmada SELECT so‘rovlari oddiy misollardan real vazifalargacha tushuntiriladi.
-1. Example uchun jadval
-CREATE TABLE products (
-    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    category VARCHAR(50),
-    price NUMERIC(10,2),
-    quantity INTEGER,
-    is_available BOOLEAN
-);, 
-INSERT INTO products (name, category, price, quantity, is_available)
-VALUES
-('Laptop','Electronics',850.00,12,TRUE),
-('Mouse','Electronics',25.50,40,TRUE),
-('Keyboard','Electronics',45.00,25,TRUE),
-('Chair','Furniture',120.00,8,TRUE),
-('Desk','Furniture',250.00,3,TRUE),
-('Notebook','Stationery',4.50,100,TRUE),
-('Pen','Stationery',1.50,200,TRUE),
-('Old Monitor','Electronics',70.00,0,FALSE);
-2. SELECT — ma'lumot olish
-SELECT jadvaldan kerakli ma'lumotlarni olish uchun ishlatiladi.
-SELECT * FROM products;
-`*` barcha ustunlarni bildiradi. Faqat kerakli ustunlarni ham tanlash mumkin:
-SELECT name, price FROM products;
-3. Column aliases — ustunga vaqtinchalik nom
-Alias SELECT natijasidagi ustun nomini tushunarli qiladi. Database’dagi haqiqiy nom o‘zgarmaydi.
-SELECT
-    name AS product_name,
-    price AS product_price
-FROM products;
-4. ORDER BY — tartiblash
-ASC — o‘sish, DESC — kamayish tartibi.
-SELECT name, price FROM products ORDER BY price ASC;
-SELECT name, price FROM products ORDER BY price DESC;
-Bir nechta ustun:
-SELECT name, category, price
-FROM products
-ORDER BY category ASC, price DESC;
-5. WHERE — shart bo‘yicha tanlash
-SELECT * FROM products WHERE price > 100;
-SELECT *
-FROM products
-WHERE category = 'Electronics'
-  AND price > 50;
-AND — barcha shartlar bajariladi. OR — shartlardan bittasi bajarilishi yetarli.
-SELECT *
-FROM products
-WHERE category = 'Electronics'
-   OR category = 'Furniture';
-6. LIMIT — natijalar sonini cheklash
-SELECT * FROM products LIMIT 3;
-Eng qimmat 3 ta mahsulot:
-SELECT name, price
-FROM products
-ORDER BY price DESC
-LIMIT 3;
-7. FETCH — qatorlar sonini cheklash
-FETCH ham natijadan ma'lum miqdordagi qatorni olishga xizmat qiladi.
-SELECT name, price
-FROM products
-ORDER BY price DESC
-FETCH FIRST 3 ROWS ONLY;
-PostgreSQL’da LIMIT juda ko‘p ishlatiladi; FETCH esa SQL standartiga yaqin sintaksisdir.
-8. IN — ro‘yxatdan qiymat tanlash
-SELECT *
-FROM products
-WHERE category IN ('Electronics', 'Furniture');
-Bu bir nechta OR shartini qisqaroq yozish uchun qulay.
-SELECT *
-FROM products
-WHERE category NOT IN ('Electronics', 'Furniture');
-9. BETWEEN — oraliqni tekshirish
-BETWEEN ikkala chegarani ham hisobga oladi.
-SELECT name, price
-FROM products
-WHERE price BETWEEN 20 AND 100;
-Bu quyidagiga teng:
-WHERE price >= 20
-  AND price <= 100
-10. LIKE — matn bo‘yicha qidirish
-`%` — istalgan miqdordagi belgilar; `_` — aynan bitta belgi.
-SELECT * FROM products WHERE name LIKE 'Lap%';
-SELECT * FROM products WHERE name LIKE '%book%';
-SELECT * FROM products WHERE name LIKE '%top';
-PostgreSQL’da katta-kichik harfni e'tiborsiz qoldirish uchun ILIKE ishlatiladi.
-SELECT * FROM products WHERE name ILIKE '%laptop%';
-11. IS NULL — NULL qiymatni tekshirish
-NULL — qiymat mavjud emas yoki noma'lum. U 0 yoki bo‘sh string emas.
-SELECT * FROM products WHERE category IS NULL;
-SELECT * FROM products WHERE category IS NOT NULL;
-`category = NULL` noto‘g‘ri usul. NULL uchun IS NULL yoki IS NOT NULL ishlatiladi.
-12. GROUP BY — guruhlash
-GROUP BY bir xil qiymatlarni guruhlaydi. Odatda COUNT, SUM, AVG, MIN va MAX bilan ishlatiladi.
-SELECT
-    category,
-    COUNT(*) AS product_count
-FROM products
-GROUP BY category;
-SELECT
-    category,
-    AVG(price) AS average_price,
-    SUM(quantity) AS total_stock
-FROM products
-GROUP BY category;
-SELECT
-    category,
-    MIN(price) AS cheapest,
-    MAX(price) AS most_expensive
-FROM products
-GROUP BY category;
-13. GROUP BY va HAVING
-WHERE alohida qatorlarni guruhlashdan oldin filtrlaydi. HAVING esa GROUP BY natijasidagi guruhlarni filtrlaydi.
-SELECT
-    category,
-    COUNT(*) AS product_count
-FROM products
-GROUP BY category
-HAVING COUNT(*) >= 2;
-14. Bir nechta imkoniyatni birlashtirish
-Real loyihalarda SELECT operatorlari birgalikda ishlatiladi.
-SELECT
-    name AS product_name,
-    price AS product_price
-FROM products
-WHERE is_available = TRUE
-  AND category IN ('Electronics', 'Furniture')
-  AND price BETWEEN 20 AND 500
-  AND name ILIKE '%o%'
-ORDER BY price DESC
-LIMIT 5;
-Bu so‘rov mavjud, kerakli kategoriyadagi, narxi berilgan oraliqdagi va nomida `o` mavjud mahsulotlarni topadi, keyin qimmatidan boshlab dastlabki 5 tasini chiqaradi.
-15. SELECT so‘rovining yozilish shakli
-SELECT column1, column2
-FROM table_name
-WHERE condition
-GROUP BY column1
-HAVING condition
-ORDER BY column1
-LIMIT 10;
-Yodlash uchun umumiy mantiq: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT. SQL’ning yozilish tartibi va ichki bajarilish tartibi bir xil emasligini keyingi mavzularda chuqurroq ko‘rish mumkin.
-16. Qisqa taqqoslash
-Buyruq	Vazifasi	Misol
-SELECT	Ma'lumotni olish	SELECT name FROM products
-AS	Alias berish	price AS product_price
-ORDER BY	Saralash	ORDER BY price DESC
-WHERE	Shart bilan tanlash	WHERE price > 100
-LIMIT	Natija sonini cheklash	LIMIT 10
-FETCH	Natija sonini cheklash	FETCH FIRST 10 ROWS ONLY
-IN	Ro‘yxatdagi qiymatni tekshirish	category IN (...)
-BETWEEN	Oraliqni tekshirish	price BETWEEN 10 AND 100
-LIKE	Pattern bo‘yicha qidirish	name LIKE 'Lap%'
-IS NULL	NULL ni tekshirish	category IS NULL
-GROUP BY	Guruhlash	GROUP BY category
- 
-17. Amaliy mashqlar
-Mashqlar oddiy SELECT’dan boshlanib, bir nechta operatorni birlashtiradigan vazifalargacha bosqichma-bosqich murakkablashadi.
+                Amaliy mashqlar
+
+
 1. Mahsulotlar ro‘yxati
 products jadvalidan barcha mahsulotlarning name va price ustunlarini chiqaring.
+
 2. Narx bo‘yicha saralash
 Mahsulotlarni price bo‘yicha kattadan kichikka tartiblang va name hamda price ni chiqaring.
+
 3. Arzon mahsulotlar
 price qiymati 50 dan kichik bo‘lgan mahsulotlarni toping va narx bo‘yicha o‘sish tartibida chiqaring.
+
 4. Eng qimmat mahsulotlar
 Mavjud mahsulotlar ichidan eng qimmat 5 tasini toping. Ustunlarga tushunarli alias bering.
+
 5. Kategoriya tanlash
 Electronics yoki Stationery kategoriyasidagi mahsulotlarni IN yordamida toping va price bo‘yicha kamayish tartibida chiqaring.
+
 6. Narx oralig‘i
 20 dan 200 gacha bo‘lgan narxdagi mahsulotlarni BETWEEN yordamida toping.
+
 7. Matnli qidiruv
 Nomi ichida `book` so‘zi uchraydigan mahsulotlarni ILIKE yordamida toping.
+
 8. Kategoriya hisoboti
 Har bir category bo‘yicha mahsulotlar soni va jami quantity ni chiqaring. Natijani jami quantity bo‘yicha kamayish tartibida saralang.
+
 9. Guruhlarni filtrlash
 Har bir category bo‘yicha mahsulotlar sonini hisoblang va kamida 2 ta mahsuloti bor kategoriyalarni HAVING yordamida chiqaring.
+
 10. Mini online-shop hisobot
 Faqat mavjud mahsulotlarni tanlang. Electronics va Furniture kategoriyalarini oling, price 20–500 oralig‘ida bo‘lsin, nomida `o` harfi qatnashsin, price bo‘yicha kamayish tartibida saralang va faqat 5 ta natija chiqaring.
-18. Qisqa xulosa
-•	SELECT — ma'lumot olish.
-•	AS — natijadagi ustunga vaqtinchalik nom berish.
-•	ORDER BY — natijani tartiblash.
-•	WHERE — qatorlarni shart bilan tanlash.
-•	LIMIT va FETCH — natija sonini cheklash.
-•	IN — bir nechta mumkin bo‘lgan qiymatni tekshirish.
-•	BETWEEN — qiymatning oraliqda ekanini tekshirish.
-•	LIKE / ILIKE — matn bo‘yicha pattern qidirish.
-•	IS NULL / IS NOT NULL — NULL qiymatlarni tekshirish.
-•	GROUP BY — ma'lumotlarni guruhlash.
-•	HAVING — hosil bo‘lgan guruhlarni shart bilan filtrlash.
-Keyingi SQL mavzularida JOIN, aggregate funksiyalar, subquery va murakkab SELECT so‘rovlari aynan shu asosiy tushunchalar ustiga quriladi.
