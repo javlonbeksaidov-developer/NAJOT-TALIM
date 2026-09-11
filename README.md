@@ -66,4 +66,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 38 | lesson38 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. | 04.09.2026 |
 | 39 | lesson39 | Practice lesson | PostgreSQL uchun SQL buyruqlari orqali misol va masalalar yechish. | 07.09.2026 |
 | 40 | lesson40 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. | 09.09.2026 |
-| 41 | lesson41 |-|-|-|
+| 41 | lesson41 | PostgreSQL | JOIN (Inner join, left join, right join, full join, self join, cross join, natural join) | 11.09.2026 |
+| 42 | lesson42 |-|-|-|
