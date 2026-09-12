@@ -1,1 +1,72 @@
-date: 9/11/2026
+SQL: JOIN turlari va table alias
+PostgreSQL misolida — jadvallarni birlashtirish usullari
+1. Kirish
+Ma'lumotlar bazasida ma'lumotlar odatda bir nechta jadvalga bo'lib saqlanadi (masalan, xodimlar alohida, bo'limlar alohida). Ikki yoki undan ortiq jadvaldagi ma'lumotlarni bitta natijada birga ko'rish uchun JOIN operatoridan foydalaniladi. Quyida har bir JOIN turi: u nima, PostgreSQL'da qanday yoziladi va amalda qachon kerak bo'lishi tushuntiriladi.
+2. Table Alias (jadval taxallusi)
+Alias — jadvalga so'rov ichida beriladigan qisqa, vaqtinchalik nom. AS kalit so'zi bilan yoki AS'siz ham yozilishi mumkin.
+SELECT x.ism, b.nomi
+FROM xodimlar AS x
+JOIN bolimlar AS b ON x.bolim_id = b.id;
+Nima uchun kerak: jadval nomi uzun bo'lganda so'rovni qisqartiradi, bir nechta jadval bilan ishlaganda ustunlarning qaysi jadvalga tegishli ekanini aniq ko'rsatadi, va bitta jadval o'ziga qo'shilganda (SELF JOIN) ikkita nusxani farqlash uchun majburiy bo'ladi.
+3. INNER JOIN
+Ikkala jadvalda ham ON shartiga mos keladigan qatorlarnigina qaytaradi. Mos kelmagan qatorlar natijaga umuman kirmaydi.
+SELECT x.ism, b.nomi
+FROM xodimlar x
+INNER JOIN bolimlar b ON x.bolim_id = b.id;
+Qachon kerak bo'ladi: ikkala tomonda ham albatta ma'lumot bo'lishi kerak bo'lgan holatlarda — masalan, faqat biror bo'limga biriktirilgan xodimlarni ko'rish, yoki faqat haqiqatan buyurtma qilingan mahsulotlarni chiqarish.
+4. LEFT JOIN (LEFT OUTER JOIN)
+FROM'dan keyin yozilgan (chap) jadvalning barcha qatorlarini qaytaradi. O'ng jadvalda mos yozuv topilmasa, o'sha ustunlar o'rniga NULL qo'yiladi.
+SELECT x.ism, b.nomi
+FROM xodimlar x
+LEFT JOIN bolimlar b ON x.bolim_id = b.id;
+Qachon kerak bo'ladi: chap jadvaldagi hech bir yozuvni yo'qotmaslik kerak bo'lganda — masalan, bo'limi hali belgilanmagan xodimlarni ham ro'yxatda ko'rish, yoki hali buyurtma bermagan mijozlarni ham hisobotga qo'shish.
+5. RIGHT JOIN (RIGHT OUTER JOIN)
+LEFT JOIN'ning aksi — JOIN'dan keyin yozilgan (o'ng) jadvalning barcha qatorlari qaytadi, chap jadvalda mos kelmasa NULL qo'yiladi.
+SELECT x.ism, b.nomi
+FROM xodimlar x
+RIGHT JOIN bolimlar b ON x.bolim_id = b.id;
+Qachon kerak bo'ladi: amalda kamroq ishlatiladi, chunki jadvallar o'rnini almashtirib LEFT JOIN bilan ham xuddi shu natijani olish mumkin. Foydali holat: hozircha hech qanday xodimi yo'q bo'sh bo'limlarni ham ko'rsatish kerak bo'lganda.
+6. FULL OUTER JOIN
+Ikkala jadvaldan ham barcha qatorlarni qaytaradi: mos kelganlarini birlashtirib, mos kelmaganlarini esa har ikki tomondan ham NULL bilan to'ldirib.
+SELECT x.ism, b.nomi
+FROM xodimlar x
+FULL OUTER JOIN bolimlar b ON x.bolim_id = b.id;
+PostgreSQL'da to'g'ridan-to'g'ri ishlaydi (MySQL'da esa qo'llab-quvvatlanmaydi, o'rniga UNION ishlatiladi). Qachon kerak bo'ladi: ikkala jadvaldagi 'yo'qolgan' yozuvlarni ham topish kerak bo'lganda — masalan, tizimga kirmagan mijozlar VA hech kim tomonidan sotib olinmagan mahsulotlarni bitta so'rovda ko'rish.
+7. SELF JOIN
+Bu alohida JOIN turi emas — jadvalning o'zini o'ziga (odatda INNER yoki LEFT JOIN orqali) qo'shish usuli. Bir jadval ichidagi bir yozuv boshqa yozuvga bog'liq bo'lganda ishlatiladi. Alias majburiy, aks holda SQL ikkala nusxani farqlay olmaydi.
+SELECT a.ism AS xodim, b.ism AS rahbari
+FROM xodimlar a
+JOIN xodimlar b ON a.rahbar_id = b.id;
+Qachon kerak bo'ladi: xodim va uning rahbari, ishchi va uning ustozi, mahsulot va uning "asosiy" versiyasi kabi bir jadval ichidagi bog'liqliklarni chiqarishda.
+8. CROSS JOIN
+Birinchi jadvalning har bir qatorini ikkinchi jadvalning har bir qatori bilan birlashtiradi (dekart ko'paytmasi). ON sharti yozilmaydi.
+SELECT x.ism, b.nomi
+FROM xodimlar x
+CROSS JOIN bolimlar b;
+Qachon kerak bo'ladi: barcha mumkin bo'lgan kombinatsiyalarni hosil qilish kerak bo'lganda — masalan, kiyimning har bir o'lchami bilan har bir rangini juftlash, yoki sport turnirida har bir jamoani boshqa har bir jamoa bilan juftlash. Kundalik so'rovlarda kam ishlatiladi, chunki katta jadvallarda natija juda tez o'sib ketishi mumkin.
+9. NATURAL JOIN
+Ikkala jadvalda bir xil nomdagi ustunlarni avtomatik topib, ular bo'yicha birlashtiradi. ON sharti yozilmaydi.
+SELECT *
+FROM xodimlar
+NATURAL JOIN bolimlar;
+Qachon kerak bo'ladi: amalda deyarli ishlatilmaydi, chunki qaysi ustun bo'yicha birlashayotgani so'rovdan ko'rinmaydi va ustun nomlari o'zgarsa yoki tasodifan bir xil nomli boshqa ustun bo'lsa, natija xato bo'lishi mumkin. ON sharti bilan aniq yozilgan JOIN har doim afzalroq.
+10. Qisqacha xulosa
+INNER JOIN — faqat mos kelganlar. LEFT JOIN — chap jadvalning barchasi. RIGHT JOIN — o'ng jadvalning barchasi. FULL OUTER JOIN — ikkala tomonning barchasi. SELF JOIN — jadval o'zi bilan. CROSS JOIN — barcha kombinatsiyalar. NATURAL JOIN — ustun nomi bo'yicha avtomatik birlashtirish.
+ 
+11. Amaliy mashqlar
+Quyidagi 15 ta masala hayotiy vaziyatlarga asoslangan. Har birida qaysi JOIN turi kerakligini avval o'zingiz aniqlashga harakat qiling, so'ngra PostgreSQL so'rovini yozing.
+1. Do'kondagi barcha mahsulotlar nomini va ular tegishli kategoriya nomini bitta ro'yxatda chiqaring.  [oson]
+2. Barcha xodimlar ismini va ular ishlaydigan bo'lim nomini chiqaring.  [oson]
+3. Kutubxonadagi barcha kitoblar va ularni yozib olgan mualliflar ismini chiqaring.  [oson]
+4. Hali birorta bo'limga biriktirilmagan xodimlarni ham ro'yxatdan tushirib qoldirmasdan, barcha xodim–bo'lim juftliklarini chiqaring.  [o'rta]
+5. Hozircha hech qanday xodimi yo'q bo'limlarni ham ko'rsatadigan tarzda, har bir bo'lim va unda ishlaydigan xodimlar sonini hisoblang.  [o'rta]
+6. Onlayn-do'konda buyurtma bermagan mijozlarni toping.  [o'rta]
+7. Hech kim buyurtma qilmagan mahsulotlarni aniqlang.  [o'rta]
+8. Har bir xodim ismi qatorida uning bevosita rahbari ismini ham ko'rsating.  [o'rta]
+9. Kompaniyadagi ikkala jadvaldan ham (xodimlar va bo'limlar) hech kimni va hech qanday bo'limni tashlab ketmasdan, to'liq ro'yxat (mos kelmagan joylarda bo'sh) tuzing.  [qiyin]
+10. Restoran menyusidagi har bir taom va u tayyorlanadigan barcha ingredientlarni ko'rsatuvchi hisobot tuzing.  [o'rta]
+11. Sport turnirida har bir jamoa boshqa har bir jamoa bilan bir marta o'ynaydigan barcha mumkin bo'lgan o'yinlar jadvalini (juftliklarni) hosil qiling.  [qiyin]
+12. Bir xil bo'limda ishlaydigan xodimlarni, o'zini o'zi bilan juftlashtirmasdan va har bir juftlikni faqat bir marta chiqaradigan tarzda, ikkitadan guruhlab chiqaring.  [qiyin]
+13. Kiyim do'konida mavjud barcha o'lchamlar (S, M, L, XL) va barcha ranglarning mumkin bo'lgan kombinatsiyalarini hosil qilib, ombor uchun to'liq variantlar ro'yxatini tuzing.  [oson]
+14. Mijozlar, ularning buyurtmalari va buyurtma qilingan mahsulotlar — uchta jadvalni birlashtirib, hech qachon buyurtma bermagan mijozlarni ham ro'yxatdan chiqarib tashlamasdan umumiy hisobot tuzing.  [qiyin]
+15. Universitetdagi barcha talabalar va ular tanlagan fanlar ro'yxatini, hali birorta fan tanlamagan talabalarni ham ko'rsatadigan tarzda chiqaring, so'ngra fan tanlamaganlar sonini alohida hisoblang.  [qiyin]
