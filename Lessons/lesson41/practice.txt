@@ -1,0 +1,17 @@
+POSTGRESQL — AMALIY SAVOLLAR
+Mavzular: SELECT, Column Aliases, ORDER BY, WHERE, LIMIT, FETCH, IN, BETWEEN, LIKE, IS NULL, GROUP BY
+1. Do‘konning products jadvalidan barcha mahsulotlarning nomi (name) va narxini (price) chiqaring.
+2. students jadvalidan o‘quvchilarning ism-familiyasi va yoshini chiqaring. Ustunlarni mos ravishda “O‘quvchi” va “Yosh” deb nomlang.
+3. products jadvalidagi mahsulotlarni narxi bo‘yicha eng arzondan eng qimmatgacha tartiblab chiqaring.
+4. employees jadvalidan oyligi 5 000 000 so‘mdan yuqori bo‘lgan xodimlarni toping.
+5. orders jadvalidan eng oxirgi 10 ta buyurtmani ko‘rsating. Natijani buyurtma sanasi bo‘yicha eng yangisidan boshlab tartiblang.
+6. products jadvalidan narxi 100 000 so‘mdan 500 000 so‘mgacha bo‘lgan mahsulotlarni BETWEEN yordamida toping.
+7. students jadvalidan yoshi 18, 20 yoki 22 ga teng bo‘lgan o‘quvchilarni IN operatori yordamida toping.
+8. customers jadvalidan ismi “Ali” bilan boshlanadigan mijozlarni LIKE operatori yordamida toping.
+9. employees jadvalidan telefon raqami kiritilmagan (NULL) xodimlarni toping.
+10. products jadvalidan nomida “telefon” so‘zi qatnashgan mahsulotlarni LIKE yordamida toping.
+11. orders jadvalidan statusi “cancelled” bo‘lmagan va umumiy summasi 300 000 so‘mdan yuqori buyurtmalarni toping. Natijani summa bo‘yicha kamayish tartibida chiqaring.
+12. employees jadvalidan har bir lavozim (position) bo‘yicha nechta xodim borligini hisoblang va lavozimlar kesimida guruhlang.
+13. sales jadvalidan har bir sotuvchi (seller_id) bo‘yicha jami savdo summasini hisoblang va eng ko‘p savdo qilgan sotuvchini birinchi o‘rinda ko‘rsating.
+14. products jadvalidan har bir kategoriya (category_id) bo‘yicha mahsulotlarning o‘rtacha narxini hisoblang. Natijani o‘rtacha narxi yuqoridan pastga qarab tartiblang.
+15. orders jadvalidan har bir mijoz (customer_id) bo‘yicha buyurtmalar sonini va jami buyurtma summasini hisoblang. Faqat kamida 3 ta buyurtma bergan mijozlarni ko‘rsating va natijani jami summa bo‘yicha kamayish tartibida chiqaring.
