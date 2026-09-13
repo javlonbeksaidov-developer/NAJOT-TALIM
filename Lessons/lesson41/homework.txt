@@ -1,0 +1,87 @@
+11. Amaliy mashqlar
+Quyidagi 15 ta masala hayotiy vaziyatlarga asoslangan. Har birida qaysi JOIN turi kerakligini avval o'zingiz aniqlashga harakat qiling, so'ngra PostgreSQL so'rovini yozing.
+
+1. Do'kondagi barcha mahsulotlar nomini va ular tegishli kategoriya nomini bitta ro'yxatda chiqaring.  [oson]
+
+SELECT
+    p.name as product_name,
+    c.name as category_name
+FROM products p
+JOIN category c
+    ON p.category_id = c.id;
+
+2. Barcha xodimlar ismini va ular ishlaydigan bo'lim nomini chiqaring.  [oson]
+
+SELECT
+    x.name as xodim_name,
+    b.name as bo;im_name
+FROM xodim x
+JOIN bolim b
+    ON x.bolim_id = b.id;
+
+3. Kutubxonadagi barcha kitoblar va ularni yozib olgan mualliflar ismini chiqaring.  [oson]
+
+SELECT
+    b.name as book_name,
+    a.name as author_name
+FROM book b
+JOIN author a
+    ON b.author_id = a.id;
+
+4. Hali birorta bo'limga biriktirilmagan xodimlarni ham ro'yxatdan tushirib qoldirmasdan, barcha xodim–bo'lim juftliklarini chiqaring.  [o'rta]
+
+SELECT
+    x.name as xodim_name
+    b.name as bolim_name
+FROM xodim x
+LEFT JOIN bolim b 
+    ON x.bolim_id = bolim.id;
+
+5. Hozircha hech qanday xodimi yo'q bo'limlarni ham ko'rsatadigan tarzda, har bir bo'lim va unda ishlaydigan xodimlar sonini hisoblang.  [o'rta]
+
+SELECT
+    b.name as bolim,
+    count(x.id) as xodim_count
+FROM bolim b 
+LEFT JOIN xodim x 
+    ON b.id = xodim.bolim_id
+GROUP BY b.id, b.name
+ORDER BY b.name;
+
+6. Onlayn-do'konda buyurtma bermagan mijozlarni toping.  [o'rta]
+
+SELECT 
+    m.name as mijoz_buyurtmasiz
+FROM mijoz m 
+LEFT JOIN buyurtma b 
+    ON m.id = b.mijoz_id
+WHERE b.id is NULL;
+
+7. Hech kim buyurtma qilmagan mahsulotlarni aniqlang.  [o'rta]
+
+SELECT
+    b.name as buyurtma
+FROM buyurtma b
+LEFT JOIN mijoz m 
+    ON b.id = m.buyurtma_id
+WHERE m.id is NULL;
+
+8. Har bir xodim ismi qatorida uning bevosita rahbari ismini ham ko'rsating.  [o'rta]
+
+SELECT 
+    x.name as xodim_name,
+    r.name as rahbar_name
+FROM xodim x 
+LEFT JOIN rahbar r 
+    ON x.rahbar_id = r.id;
+
+9. Kompaniyadagi ikkala jadvaldan ham (xodimlar va bo'limlar) hech kimni va hech qanday bo'limni tashlab ketmasdan, to'liq ro'yxat (mos kelmagan joylarda bo'sh) tuzing.  [qiyin]
+
+
+
+10. Restoran menyusidagi har bir taom va u tayyorlanadigan barcha ingredientlarni ko'rsatuvchi hisobot tuzing.  [o'rta]
+11. Sport turnirida har bir jamoa boshqa har bir jamoa bilan bir marta o'ynaydigan barcha mumkin bo'lgan o'yinlar jadvalini (juftliklarni) hosil qiling.  [qiyin]
+12. Bir xil bo'limda ishlaydigan xodimlarni, o'zini o'zi bilan juftlashtirmasdan va har bir juftlikni faqat bir marta chiqaradigan tarzda, ikkitadan guruhlab chiqaring.  [qiyin]
+13. Kiyim do'konida mavjud barcha o'lchamlar (S, M, L, XL) va barcha ranglarning mumkin bo'lgan kombinatsiyalarini hosil qilib, ombor uchun to'liq variantlar ro'yxatini tuzing.  [oson]
+14. Mijozlar, ularning buyurtmalari va buyurtma qilingan mahsulotlar — uchta jadvalni birlashtirib, hech qachon buyurtma bermagan mijozlarni ham ro'yxatdan chiqarib tashlamasdan umumiy hisobot tuzing.  [qiyin]
+15. Universitetdagi barcha talabalar va ular tanlagan fanlar ro'yxatini, hali birorta fan tanlamagan talabalarni ham ko'rsatadigan tarzda chiqaring, so'ngra fan tanlamaganlar sonini alohida hisoblang.  [qiyin]
