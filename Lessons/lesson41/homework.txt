@@ -77,11 +77,84 @@ LEFT JOIN rahbar r
 
 9. Kompaniyadagi ikkala jadvaldan ham (xodimlar va bo'limlar) hech kimni va hech qanday bo'limni tashlab ketmasdan, to'liq ro'yxat (mos kelmagan joylarda bo'sh) tuzing.  [qiyin]
 
-
+SELECT 
+    x.name as xodimlar,
+    b.name as bolimlar
+FROM xodim x 
+FULL JOIN bolim b 
+    ON x.bolim_id = b.id;
 
 10. Restoran menyusidagi har bir taom va u tayyorlanadigan barcha ingredientlarni ko'rsatuvchi hisobot tuzing.  [o'rta]
+
+SELECT
+    d.name AS dish_name,
+    i.name AS ingredient_name
+FROM dishes d
+INNER JOIN dish_ingredients di
+    ON d.id = di.dish_id
+INNER JOIN ingredients i
+    ON di.ingredient_id = i.id
+ORDER BY d.name;
+
 11. Sport turnirida har bir jamoa boshqa har bir jamoa bilan bir marta o'ynaydigan barcha mumkin bo'lgan o'yinlar jadvalini (juftliklarni) hosil qiling.  [qiyin]
+
+SELECT
+    x.name as home,
+    y.name as away
+FROM teams x
+CROSS JOIN teams y
+WHERE x.id < y.id;
+
 12. Bir xil bo'limda ishlaydigan xodimlarni, o'zini o'zi bilan juftlashtirmasdan va har bir juftlikni faqat bir marta chiqaradigan tarzda, ikkitadan guruhlab chiqaring.  [qiyin]
+
+SELECT
+    e1.name AS employee_1,
+    e2.name AS employee_2,
+    e1.department_id
+FROM employees e1
+INNER JOIN employees e2
+    ON e1.department_id = e2.department_id
+    AND e1.id < e2.id;
+
 13. Kiyim do'konida mavjud barcha o'lchamlar (S, M, L, XL) va barcha ranglarning mumkin bo'lgan kombinatsiyalarini hosil qilib, ombor uchun to'liq variantlar ro'yxatini tuzing.  [oson]
+
+SELECT 
+    s.name as size,
+    c.name as color
+FROM size s 
+CROSS JOIN color c 
+ORDER BY s.name, c.name;
+
 14. Mijozlar, ularning buyurtmalari va buyurtma qilingan mahsulotlar — uchta jadvalni birlashtirib, hech qachon buyurtma bermagan mijozlarni ham ro'yxatdan chiqarib tashlamasdan umumiy hisobot tuzing.  [qiyin]
+
+SELECT
+    c.name AS customer_name,
+    o.id AS order_id,
+    p.name AS product_name
+FROM customers c
+LEFT JOIN orders o
+    ON c.id = o.customer_id
+LEFT JOIN order_items oi
+    ON o.id = oi.order_id
+LEFT JOIN products p
+    ON oi.product_id = p.id
+ORDER BY c.name;
+
 15. Universitetdagi barcha talabalar va ular tanlagan fanlar ro'yxatini, hali birorta fan tanlamagan talabalarni ham ko'rsatadigan tarzda chiqaring, so'ngra fan tanlamaganlar sonini alohida hisoblang.  [qiyin]
+
+SELECT
+    s.name AS student_name,
+    c.name AS course_name
+FROM students s
+LEFT JOIN student_courses sc
+    ON s.id = sc.student_id
+LEFT JOIN courses c
+    ON sc.course_id = c.id
+ORDER BY s.name;
+
+
+SELECT COUNT(*) AS students_without_course
+FROM students s
+LEFT JOIN student_courses sc
+    ON s.id = sc.student_id
+WHERE sc.student_id IS NULL;
