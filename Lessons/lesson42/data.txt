@@ -1,0 +1,4 @@
+| 42 | lesson42 | Docker • Container • Image|-| 14.09.2026 |
+
+
+Docker download link: ->  https://docs.docker.com/desktop/setup/install/windows-install/
