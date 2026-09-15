@@ -2,3 +2,30 @@
 
 
 Docker download link: ->  https://docs.docker.com/desktop/setup/install/windows-install/
+
+
+Dockerfile:
+-------------------------------------------------
+FROM python:3.13-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["uvicorn", "app.main:app", "--port", "8000"]
+-------------------------------------------------
+
+
+terminalda docker run qilish
+-------------------------------------------------
+docker build -t test_project:latest .
+-------------------------------------------------
+
+run
+-------------------------------------------------
+docker run -d --name 
+-------------------------------------------------

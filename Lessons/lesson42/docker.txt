@@ -1,0 +1,47 @@
+Docker – Python kursi uchun qisqa qo'llanma
+
+1. Docker nima?
+Docker ilovalarni container ichida bir xil muhitda ishga tushirish imkonini beradi.
+Image - shablon.
+Container - image asosida yaratilgan ishlayotgan nusxa.
+
+
+2. Asosiy buyruqlar
+docker pull redis:latest
+docker images
+docker run -d --name redis-server -p 6379:6379 redis:7
+docker ps
+docker ps -a
+docker stop redis-server
+docker start redis-server
+docker restart redis-server
+docker rm redis-server
+docker logs redis-server
+docker exec -it redis-server redis-cli
+
+
+3. docker run tahlili
+-d: background
+--name: container nomi
+-p: port bog'lash
+redis:7: image va versiya
+
+
+4. Dockerfile
+FROM python:3.13
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python","main.py"]
+
+
+5. Best Practices
+- latest o'rniga versiya ishlating.
+- docker logs bilan xatolarni tekshiring.
+- Volume ishlating.
+- Har bir servis uchun alohida container.
+
+
+6. Mashqlar
+Redis container yarating, redis-cli ga kiring, PING, SET/GET ni bajaring, containerni to'xtating va qayta ishga tushiring.
