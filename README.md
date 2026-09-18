@@ -68,5 +68,6 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 40 | lesson40 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. (SELECT • ALIASES • ORDER BY • WHERE • LIMIT • FETCH • IN • BETWEEN • LIKE • IS NULL • GROUP BY) | 09.09.2026 |
 | 41 | lesson41 | PostgreSQL | JOIN (Inner join, left join, right join, full join, self join, cross join, natural join) | 11.09.2026 |
 | 42 | lesson42 | Docker • Container • Image| Docker bilan tanishuv, o'rnatish | 14.09.2026 |
-| 43 | lesson43 | Docker compose |-| 16.09.2026 |
-| 44 | lesson44 |-|-|-|
+| 43 | lesson43 | Docker compose | Docker bilan ishlash. Docker compose bilan tanishuv | 16.09.2026 |
+| 44 | lesson44 | Telegram Bot |-| 18.09.2026 |
+| 45 | lesson45 |-|-|-|
