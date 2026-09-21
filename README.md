@@ -70,4 +70,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 42 | lesson42 | Docker • Container • Image| Docker bilan tanishuv, o'rnatish | 14.09.2026 |
 | 43 | lesson43 | Docker compose | Docker bilan ishlash. Docker compose bilan tanishuv | 16.09.2026 |
 | 44 | lesson44 | Telegram Bot | Pythonda pyTelegramBotAPI kutubxona orqali telegram bot | 18.09.2026 |
-| 45 | lesson45 |-|-|-|
+| 45 | lesson45 | Telegram Bot | Telegram Bot, content types, inline buttons | 21.09.2026 |
+| 46 | lesson46 |-|-|-|
