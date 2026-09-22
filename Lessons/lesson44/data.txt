@@ -1,0 +1,5 @@
+Pythonda pyTelegramBotAPI kutubxona orqali telegram bot
+
+telegram bot uchun github repo_url ->
+
+<<< https://github.com/javlonbeksaidov-developer/TelegramBot >>>

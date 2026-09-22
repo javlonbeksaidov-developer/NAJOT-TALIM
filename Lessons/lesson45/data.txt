@@ -1,0 +1,6 @@
+Pythonda pyTelegramBotAPI kutubxona, Telegram Bot, content types, inline buttons orqali telegram bot
+
+
+telegram bot uchun github repo_url ->
+
+<<< https://github.com/javlonbeksaidov-developer/TELEGRAM-BOT >>>
