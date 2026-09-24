@@ -72,5 +72,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 44 | lesson44 | Telegram Bot | Pythonda pyTelegramBotAPI kutubxona orqali telegram bot | 18.09.2026 |
 | 45 | lesson45 | Telegram Bot | Telegram Bot, content types, inline buttons | 21.09.2026 |
 | 46 | lesson46 | EXAM | 3-4-oy uchun imtihon | 23.09.2026 |
-| 47 | lesson46 |-|-|-|
+| 47 | lesson47 |-|-|-|
 
