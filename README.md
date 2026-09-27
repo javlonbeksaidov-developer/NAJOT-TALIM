@@ -56,15 +56,15 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 28 | lesson28 | FastApi Fremwork | FastApi fremworkiga kirish.<br>1.get metod()<br>2.post metod()<br>3.put metod()<br>4.delete metod() | 07.08.2026 |
 | 29 | lesson29 | FastApi Fremwork | FastApi fremwork practice | 10.08.2026 |
 | 30 | lesson30 | ORM & SQLalchemy | SQLite bilan ma'lumotlar bazasi | 12.08.2026 |
-| 31 | lesson31 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
-| 32 | lesson32 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
-| 33 | lesson33 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 19.08.2026 |
-| 34 | lesson34 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 21.08.2026 |
-| 35 | lesson35 | Practice lesson | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) final | 24.08.2026 |
+| 31 | lesson31 | FastAPI Fremwork | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (kirim-chiqim loyihasi) | 14.08.2026 |
+| 32 | lesson32 | FastAPI Fremwork | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 17.08.2026 |
+| 33 | lesson33 | FastAPI Fremwork | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 19.08.2026 |
+| 34 | lesson34 | FastAPI Fremwork | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) | 21.08.2026 |
+| 35 | lesson35 | FastAPI Fremwork | ORM & SQLalchemy & FastAPI mavzusida amaliy loyiha (dorixona loyihasi) final | 24.08.2026 |
 | 36 | lesson36 | PostgreSQL | PostgreSQL bilan tanishuv, o'rnatish | 26.08.2026 |
 | 37 | lesson37 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. (CREATE DATABASE • CREATE TABLE • SELECT) | 28.08.2026 |
 | 38 | lesson38 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. (ALTER TABLE • DROP TABLE) | 04.09.2026 |
-| 39 | lesson39 | Practice lesson | PostgreSQL uchun SQL buyruqlari orqali misol va masalalar yechish. | 07.09.2026 |
+| 39 | lesson39 | PostgreSQL | PostgreSQL uchun SQL buyruqlari orqali misol va masalalar yechish. | 07.09.2026 |
 | 40 | lesson40 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. (SELECT • ALIASES • ORDER BY • WHERE • LIMIT • FETCH • IN • BETWEEN • LIKE • IS NULL • GROUP BY) | 09.09.2026 |
 | 41 | lesson41 | PostgreSQL | JOIN (Inner join, left join, right join, full join, self join, cross join, natural join) | 11.09.2026 |
 | 42 | lesson42 | Docker • Container • Image| Docker bilan tanishuv, o'rnatish | 14.09.2026 |
