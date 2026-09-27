@@ -1,0 +1,7 @@
+Django fremwork 
+
+1. <<[ pip install django ]>> buyrug'i orqali yuklab olinadi.
+
+2. <<[ django-admin startproject config . ]>> buyrug'i orqali yangi project yaratiladi.
+
+3. <<[ python manage.py runserver ]>> buyrug'i orqali loyiha ishga tushadi
