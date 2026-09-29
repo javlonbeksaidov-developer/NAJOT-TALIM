@@ -1,0 +1,3 @@
+FastAPI framework
+
+1. <<[ pip install fastapi ]>>
