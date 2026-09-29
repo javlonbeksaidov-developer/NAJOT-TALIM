@@ -67,12 +67,12 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 39 | lesson39 | PostgreSQL | PostgreSQL uchun SQL buyruqlari orqali misol va masalalar yechish. | 07.09.2026 |
 | 40 | lesson40 | PostgreSQL | PostgreSQL uchun SQL buyruqlari. (SELECT • ALIASES • ORDER BY • WHERE • LIMIT • FETCH • IN • BETWEEN • LIKE • IS NULL • GROUP BY) | 09.09.2026 |
 | 41 | lesson41 | PostgreSQL | JOIN (Inner join, left join, right join, full join, self join, cross join, natural join) | 11.09.2026 |
-| 42 | lesson42 | Docker • Container • Image| Docker bilan tanishuv, o'rnatish | 14.09.2026 |
+| 42 | lesson42 | Docker| Docker bilan tanishuv, o'rnatish. Container • Image | 14.09.2026 |
 | 43 | lesson43 | Docker compose | Docker bilan ishlash. Docker compose bilan tanishuv | 16.09.2026 |
 | 44 | lesson44 | Telegram Bot | Pythonda pyTelegramBotAPI kutubxona orqali telegram bot | 18.09.2026 |
 | 45 | lesson45 | Telegram Bot | Telegram Bot, content types, inline buttons | 21.09.2026 |
 | 46 | lesson46 | EXAM | 3-4-oy uchun imtihon | 23.09.2026 |
-| 47 | lesson47 | Django | Django bilan tanishuv. | 25.09.2026 |
+| 47 | lesson47 | Django | Django bilan tanishuv | 25.09.2026 |
 | 48 | lesson48 | Django | startproject, startapp, MVT (Model-Veiw-Template) | 28.09.2026 |
 | 49 | lesson49 |-|-|-|
 
