@@ -1,0 +1,32 @@
+Python Django framework 
+
+1. <<[ pip install Django ]>>
+        Django kutubxonasini o'rnatish
+
+2. <<[ django-admin startproject config . ]>>
+        Django framework uchun yangi loyiha yaratish
+
+3. <<[ python manage.py runserver ]>>
+        Django framework uchun loyihani ishga tushirish
+
+4. <<[ python manage.py startapp main ]>>
+        Django framework uchun app yaratish
+
+
+
+    config:         -> startproject
+1. __init__.py
+2. asgi.py
+3. settings.py
+4. urls.py
+5. wsgi.py
+
+
+    main:           -> startapp
+1. __init__.py
+2. admin.py
+3. apps.py
+4. models.py
+5. tests.py
+6. urls.py
+7. views.py
