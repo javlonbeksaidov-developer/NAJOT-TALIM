@@ -1,0 +1,7 @@
+Income & Expenditure — daromad va xarajatlarni boshqarish uchun yaratilgan REST API backend loyihasi.
+
+Loyiha FastAPI + SQLite + SQLAlchemy yordamida ishlab chiqilgan va CRUD amallarini bajarishga mo‘ljallangan.
+
+🎯 Maqsad: kirim va chiqimlarni qulay boshqarish, ma'lumotlarni SQLite bazasida saqlash va REST API orqali ulardan foydalanish.
+
+GitHub ushbu repoda yaratilgan <<{{ https://github.com/javlonbeksaidov-developer/income-expenditure }}>>
