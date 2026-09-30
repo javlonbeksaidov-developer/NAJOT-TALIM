@@ -1,10 +1,14 @@
-1. python manage.py makemigrations
+Django framework MVT (Model-View-Template) tamoyilini Models qismi.
 
-2. pip install Pillow
+Models - malumotlar bazasi tushuniladi.
 
-3. python manage.py migrate
+1. <<[ python manage.py makemigrations ]>>
 
-4. python manage.py createsuperuser
+2. <<[ pip install Pillow ]>>
+
+3. <<[ python manage.py migrate ]>>
+
+4. <<[ python manage.py createsuperuser ]>>
 
 
-from django.contrib.auth.models import User
+5. from django.contrib.auth.models import User
