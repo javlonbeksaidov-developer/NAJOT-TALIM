@@ -1,0 +1,5 @@
+1. python manage.py makemigrations
+
+2. pip install Pillow
+
+3. python manage.py migrate
