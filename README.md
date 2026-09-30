@@ -74,5 +74,6 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 46 | lesson46 | EXAM | 3-4-oy uchun imtihon | 23.09.2026 |
 | 47 | lesson47 | Django | Django bilan tanishuv | 25.09.2026 |
 | 48 | lesson48 | Django | startproject, startapp, MVT (Model-Veiw-Template) | 28.09.2026 |
-| 49 | lesson49 |-|-|-|
+| 49 | lesson49 | Django | Models. Django ORM | 30.09.2026 |
+| 50 | lesson50 |-|-|-|
 
