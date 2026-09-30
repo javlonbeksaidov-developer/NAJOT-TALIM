@@ -16,3 +16,4 @@ Models - malumotlar bazasi tushuniladi.
 
 
 5. from django.contrib.auth.models import User
+        Django auto User jadvalini yaratadi shunday import qilish yordamida User class chaqirib ishlatish mumkin.
