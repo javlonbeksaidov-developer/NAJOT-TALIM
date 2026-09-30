@@ -3,12 +3,16 @@ Django framework MVT (Model-View-Template) tamoyilini Models qismi.
 Models - malumotlar bazasi tushuniladi.
 
 1. <<[ python manage.py makemigrations ]>>
+        Bu buyruq models faylida class orqali jadval yaratilganda, shu jadvalni bazaga qo'shish uchun ishlatiladi.
 
 2. <<[ pip install Pillow ]>>
+        Bu buyruq rasmlarni yuklash uchun django frameworkga yordam beradi. 
 
 3. <<[ python manage.py migrate ]>>
+        Bu buyruq jadvallarda uzgarishlarni saqlash uchun <<[ python manage.py makemigrations ]>> buyruqdan keyin ishlatiladi.
 
 4. <<[ python manage.py createsuperuser ]>>
+        Bu buyruq admin (superadmin) yaratish uchun ishlatiladi.
 
 
 5. from django.contrib.auth.models import User
