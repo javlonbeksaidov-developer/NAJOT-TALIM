@@ -1,0 +1,117 @@
+OOP methodlari (classmethod, staticmethod, dundermethod, instansmethod)
+
+Albatta. Python OOP'da metodlarni tushunishda eng muhim narsa — metod qaysi obyektga tegishli va unga nima kerakligini ajratish.
+
+Python'da asosiy 4 tur:
+
+Instance method
+Class method
+Static method
+Dunder method
+1. Instance Method
+
+Bu OOP'da eng ko‘p ishlatiladigan metod.
+
+Instance method obyektning (self) ma'lumotlari bilan ishlaydi.
+
+class User:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def info(self):
+        return f"{self.name}, {self.age} yosh"
+
+
+user = User("Javlon", 20)
+
+print(user.info())
+
+
+
+2. Class Method
+
+Class method obyektga emas, classning o‘ziga bog‘liq.
+
+@classmethod dekoratori ishlatiladi.
+
+class User:
+
+    users_count = 0
+
+    def __init__(self, name):
+        self.name = name
+        User.users_count += 1
+
+    @classmethod
+    def get_users_count(cls):
+        return cls.users_count
+
+user1 = User("Javlon")
+user2 = User("Ali")
+
+print(User.get_users_count())  -> 2
+
+
+
+3. Static Method
+
+Static method — class ichida turadi, lekin self ham, cls ham kerak emas.
+
+class Math:
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+
+print(Math.add(10, 20))  -> 30
+
+
+4. Dunder Method
+
+Dunder = Double Underscore
+
+Nomining boshida va oxirida __ bo‘ladi.
+
+Masalan:
+
+__init__
+__str__
+__len__
+__eq__
+__add__
+
+
+
+4 tasini birga ko‘ramiz
+
+Mana eng yaxshi umumiy misol:
+
+class User:
+
+    users_count = 0
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        User.users_count += 1
+
+    # Instance method
+    def info(self):
+        return f"{self.name} - {self.age} yosh"
+
+    # Class method
+    @classmethod
+    def get_users_count(cls):
+        return cls.users_count
+
+    # Static method
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
+
+    # Dunder method
+    def __str__(self):
+        return f"User: {self.name}"
