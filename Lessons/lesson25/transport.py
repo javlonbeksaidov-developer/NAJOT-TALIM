@@ -42,7 +42,9 @@ class Bus(Transport):
 
 def main():
     car = Car(name="car", tezlik=180, yoqilgi_hajmi=10, odam_soni=5, gildirak_soni=4)
-    bicycle = Bicycle(name="bicycle", tezlik=15, yoqilgi_hajmi=0, odam_soni=1, gildirak_soni=2)
+    bicycle = Bicycle(
+        name="bicycle", tezlik=15, yoqilgi_hajmi=0, odam_soni=1, gildirak_soni=2
+    )
     bus = Bus(name="bus", tezlik=150, yoqilgi_hajmi=30, odam_soni=24, gildirak_soni=8)
 
     print(car)

@@ -41,8 +41,6 @@ class Car(Room):
 
 
 
-
-
 # Person, Teacher, Student class
 from uuid import uuid4
 
@@ -93,8 +91,6 @@ teacher = Teacher("javlon", "saidov", 991234567, "teacher", 123456, "math")
 print(person.get_id())
 print(student.get_id())
 print(teacher.get_id())
-
-
 
 
 # transport, bus, car, bicycle class
