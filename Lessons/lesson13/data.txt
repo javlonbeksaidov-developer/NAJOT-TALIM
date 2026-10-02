@@ -13,6 +13,7 @@ print(user_info_1)
 user_info_2 = user_data(age = 21, gender = "male", name = "Javlon")
 print(user_info_2)
 
+
 # 2 default qiymat
 def greet(name = "Mehmon"):
     return f"Salom {name}."
@@ -23,6 +24,7 @@ res_2 = greet("Javlonbek")
 print(res_1)
 print(res_2)
 
+
 # 3 
 def yuza_hisobla(eni = 4, boyi = 4):
     return  eni * boyi
@@ -30,6 +32,7 @@ def yuza_hisobla(eni = 4, boyi = 4):
 print(yuza_hisobla(2, 5))
 print(yuza_hisobla(2))
 print(yuza_hisobla(boyi = 10))
+
 
 # 4
 def juftmi(number = -1):
@@ -44,6 +47,7 @@ print(juftmi(12))
 print(juftmi(13))
 print(juftmi(0))
 print(juftmi())
+
 
 # 5 *args sum()
 def summa(*sonlar):
