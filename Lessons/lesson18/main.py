@@ -1,7 +1,7 @@
-
 def plus(balance, pul):
     result = balance + pul
     return result
+
 
 def minus(balance, pul):
     if balance < pul:
@@ -17,7 +17,11 @@ def main():
     while True:
         try:
             print("\n=== Bankomat ===\n")
-            tanla = int(input("(1). Pul qo'shish.\n(2). Pul yechish.\n(3). Balance.\n(0). Exit.\n>>> "))
+            tanla = int(
+                input(
+                    "(1). Pul qo'shish.\n(2). Pul yechish.\n(3). Balance.\n(0). Exit.\n>>> "
+                )
+            )
         except ValueError:
             print("(1) (2) (3) raqamlarini kiriting.")
         else:
@@ -55,7 +59,6 @@ def main():
         yana = input("\nDavom ettirasizmi (yes/no):\n>>> ")
         if yana == "no":
             break
-
 
 
 if __name__ == "__main__":
