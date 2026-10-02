@@ -5,14 +5,14 @@ Agar kitob kechiktirilsa, har bir kechikkan kun uchun bazaviy narx (masalan, 500
 har 3 kundan keyin oshib boradigan jarima tizimi asosida umumiy summani hisoblang.
 """
 
+import calendar
 from datetime import datetime, timedelta
 from uuid import uuid4
-import calendar
 
 TOLOV_KUNLIK = 5000
 TOLOV_DARAJA = 1000
 
-FILENAME = 'jarimalar.txt'
+FILENAME = "jarimalar.txt"
 
 
 def sana():
@@ -22,11 +22,11 @@ def sana():
         except ValueError:
             print("Butun son kiriting.")
         else:
-            if 1900 <= yil <= datetime.now().year:
+            if 1900 <= yil <= datetime.now().year:  # noqa: DTZ005
                 break
             else:
                 print(
-                    f"Yil 1900-yildan {datetime.now().year}-gacha bo'lgan yilni kiriting."
+                    f"Yil 1900-yildan {datetime.now().year}-gacha bo'lgan yilni kiriting."  # noqa: DTZ005
                 )
 
     while True:
@@ -40,7 +40,9 @@ def sana():
             else:
                 print("Oy 1dan 12gacha bo'lgan qaiymatlarni kiriting.")
 
-    max_day = calendar.monthrange(year=yil, month=oy)[1]        # yil va oyga qarab kunni hisoblaydi
+    max_day = calendar.monthrange(year=yil, month=oy)[
+        1
+    ]  # yil va oyga qarab kunni hisoblaydi
     while True:
         try:
             kun = int(input(f"Kun (1-{max_day}):"))
@@ -68,7 +70,7 @@ def qarz(kunlar):
 def statistika():
     print("=== Statistika ===")
     try:
-        with open(FILENAME, 'r', encoding='utf-8') as file:
+        with open(FILENAME, "r", encoding="utf-8") as file:
             data = file.readlines()
     except FileNotFoundError:
         son = 0
@@ -80,11 +82,11 @@ def statistika():
             if "Kitob ID:" in qator:
                 son += 1
             if "Hisoblangan jarima miqdori:" in qator:
-                raqam = ''
+                raqam = ""
                 for belgi in qator:
                     if belgi.isdigit():
-                            raqam += belgi
-                
+                        raqam += belgi
+
                 if raqam:
                     pul = int(raqam)
                     narx += pul
@@ -98,7 +100,7 @@ def main():
     while True:
         print("\nIjaraga olgan sanasini kiriting.")
         yil, oy, kun = sana()
-        start = datetime(year=yil, month=oy, day=kun)
+        start = datetime(year=yil, month=oy, day=kun)  # noqa: DTZ001
 
         while True:
             try:
@@ -114,11 +116,11 @@ def main():
 
         print("\nIjarani qaytargan sanasini kiriting.")
         yil, oy, kun = sana()
-        stop = datetime(year=yil, month=oy, day=kun)
+        stop = datetime(year=yil, month=oy, day=kun)  # noqa: DTZ001
 
         if start <= stop:
             if stop > deadline:
-                with open(FILENAME, 'a') as file:
+                with open(FILENAME, "a") as file:
                     farq = stop - deadline
                     kun = int(farq.days)
                     narx = qarz(kun)
