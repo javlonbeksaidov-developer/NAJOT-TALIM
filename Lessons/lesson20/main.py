@@ -14,11 +14,8 @@ blocks = soup.find_all("figcaption")
 
 for player in blocks:
     first_name = player.find("span", attrs={"class": "team-person__first-name"})
-
     last_name = player.find("span", attrs={"class": "team-person__last-name"})
-
     position = player.find("li", attrs={"class": "team-person__position-meta"})
-
     number = player.find("span", attrs={"class": "team-person__number"})
 
     data = {

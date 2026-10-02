@@ -1,4 +1,4 @@
-Venv vertual muhit
+Venv - vertual muhit
 
 # python -m venv env
 
