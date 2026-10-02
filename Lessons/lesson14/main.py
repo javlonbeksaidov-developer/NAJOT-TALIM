@@ -1,4 +1,3 @@
-
 def text_count(text):
     word_count = {}
     for soz in text.split():
@@ -22,5 +21,6 @@ def main():
 
     result = text_count(text)
     print(result)
+
 
 main()

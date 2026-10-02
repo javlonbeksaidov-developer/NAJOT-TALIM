@@ -1,4 +1,3 @@
-
 # dict
 person = {
     "fname" : "Javlon",
