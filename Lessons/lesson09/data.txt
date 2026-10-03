@@ -1,4 +1,3 @@
-#00
 import random
 
 chars = ["!@#$%^&*"]
@@ -9,10 +8,7 @@ random_char = chars[
 ]
 
 
-
 ishora = ""
-
-
 while ishora:
     belgi = input("Belgi tanlang: (!@#$%^&*) ")
     if belgi == random_char:
@@ -21,4 +17,3 @@ while ishora:
         ishora = False
         
 print(f"Sizning balingiz {ball}")
-
