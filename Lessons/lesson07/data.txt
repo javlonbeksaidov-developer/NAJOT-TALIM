@@ -1,0 +1,21 @@
+GitHub — bu kodingizni saqlash, loyihalar versiyasini boshqarish (version control) va boshqa dasturchilar bilan birgalikda ishlash uchun moʻljallangan bulutli (online) platformadir. U Git tizimiga asoslangan boʻlib, kodingizda qilingan har bir oʻzgarishni kuzatib boradi.
+
+Keltirilgan buyruqlarning har biriga qisqacha taʼrif:
+
+1. git clone <repo_url>
+GitHub’dagi masofaviy repozitoriy (loyiha kodi) nusxasini oʻzingizning kompyuteringizga toʻliq yuklab olish uchun ishlatiladi.
+
+Misol: git clone [https://github.com/user/project.git](https://github.com/user/project.git)
+
+2. git add <filename> (yoki git add .)
+Kompyuteringizda oʻzgartirilgan yoki yangi yaratilgan fayllarni Staging Area (saqlashga tayyorlash hududi)ga qoʻshadi. Yaʼni, qaysi fayllar keyingi commitʼga kirishini belgilab beradi.
+
+Maslahat: Barcha oʻzgargan fayllarni birvarakay qoʻshish uchun git add . buyrugʻidan foydalaniladi.
+
+3. git commit -m "message"
+Tayyorlangan oʻzgarishlarni lokal (kompyuteringizdagi) Git omboriga rasm kabi Muhrlaydi (fiksatsiya qiladi). -m belgisi esa ushbu oʻzgarishga qisqa va tushunarli izoh (message) yozish uchun xizmat qiladi.
+
+Misol: git commit -m "Add authentication feature"
+
+4. git push
+Lokal kompyuteringizda saqlangan (commit qilingan) oʻzgarishlarni GitHub’dagi masofaviy repozitoriyga (remote repository) yuklaydi. Shunda kodingiz onlayn platformada va boshqa jamoa aʼzolarida koʻrinadi.
