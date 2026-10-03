@@ -1,0 +1,22 @@
+Python for operatori — ta'rif
+
+for operatori — Python dasturlash tilida takrorlanuvchi amallarni bajarish, ya’ni sikl tashkil qilish uchun ishlatiladigan operator. U berilgan ketma-ketlikdagi elementlarni birma-bir olib, har bir element uchun belgilangan kodni bajaradi.
+
+for i in range(n):
+    # bajariladigan kod
+
+
+Bu yerda range(n) 0 dan n-1 gacha bo‘lgan sonlarni hosil qiladi va for sikli har bir son uchun kodni takroran bajaradi.
+
+Misol:
+
+for i in range(5):
+    print(i)
+
+
+Natija:
+0
+1
+2
+3
+4
