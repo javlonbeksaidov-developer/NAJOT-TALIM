@@ -1,0 +1,69 @@
+🐍 if shart operatori
+
+Ta’rifi:
+if — Python dasturlash tilida ma’lum bir shartni tekshirish uchun ishlatiladigan shart operatori. Agar shart True bo‘lsa, if ichidagi kod bajariladi.
+
+📌 Qoida
+if shart:
+    # shart True bo'lsa bajariladigan kod
+
+Misol:
+
+age = 20
+
+if age >= 18:
+    print("Siz voyaga yetgansiz")
+
+Natija:
+
+Siz voyaga yetgansiz
+🔹 if-else
+
+Agar if sharti bajarilmasa, else ichidagi kod bajariladi.
+
+📌 Qoida
+if shart:
+    # True bo'lsa
+else:
+    # False bo'lsa
+
+Misol:
+
+age = 16
+
+if age >= 18:
+    print("Kirish mumkin")
+else:
+    print("Kirish mumkin emas")
+
+Natija:
+
+Kirish mumkin emas
+🔹 if-elif-else
+
+Bir nechta shartni tekshirish uchun elif ishlatiladi.
+
+📌 Qoida
+if shart1:
+    # shart1 True bo'lsa
+elif shart2:
+    # shart2 True bo'lsa
+else:
+    # hech qaysi shart True bo'lmasa
+
+Misol:
+
+ball = 75
+
+if ball >= 90:
+    print("A")
+elif ball >= 70:
+    print("B")
+elif ball >= 60:
+    print("C")
+else:
+    print("F")
+
+Natija:
+
+B
