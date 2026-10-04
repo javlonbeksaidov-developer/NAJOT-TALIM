@@ -65,5 +65,3 @@ print(
     num2words(average),
     num2words(average, lang='ru')
 )
-
-#4
