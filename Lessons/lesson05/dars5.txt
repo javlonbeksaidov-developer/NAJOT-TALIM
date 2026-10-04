@@ -10,7 +10,6 @@ print(uzb_raqam)
 print(f"Telefon raqamingiz: +998 {tel_1} {tel_2} {tel_3} {tel_4}")
 
 
-
 #02
 from random import randint
 
