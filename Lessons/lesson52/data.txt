@@ -1,0 +1,58 @@
+Django Framework’da Static Files (CSS, JS)
+1. Static Files nima?
+
+Static Files — veb-saytning ko‘rinishi va interaktivligini ta’minlaydigan, odatda server tomonidan dinamik ravishda yaratilmaydigan fayllardir.
+
+Django’da static files sifatida quyidagilar ishlatiladi:
+
+CSS — HTML sahifaning dizayni, ranglari, o‘lchamlari va joylashuvini belgilaydi.
+JavaScript (JS) — sahifaga interaktivlik qo‘shadi, masalan, tugma bosilganda menyuni ochish.
+Images — logo, fon rasmlari va boshqa tasvirlar.
+Fonts — maxsus shriftlar va ikonlar.
+
+2. Django’da Static Files papkalar tuzilishi
+
+Masalan, myapp nomli Django ilovasida quyidagi tuzilishdan foydalanish mumkin:
+
+myproject/
+    myapp/
+    static/
+        css/
+            style.css
+        js/
+            script.js
+        images/
+            logo.png
+    templates/
+        home.html
+
+3. Django sozlamalari — settings.py
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/6.1/howto/static-files/
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'staticfiles',
+]
+
+4. CSS va JS fayllarini HTML’ga ulash
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Bosh sahifa</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">     # CSS file
+</head>
+<body>
+    <h1>Salom, Django!</h1>
+    <p>Bu mening birinchi sahifam.</p>
+
+    <script src="{% static 'js/script.js' %}"></script>             # JS file
+</body>
+</html>
