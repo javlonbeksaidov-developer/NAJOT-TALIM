@@ -48,3 +48,21 @@ Sintaksis                       Vazifasi
 {% block content %}             Shablonning o‘zgaruvchan qismini belgilash
 {% include 'navbar.html' %}     Boshqa shablonni qo‘shish
 {% csrf_token %}                Forma uchun CSRF tokenini chiqarish
+
+
+4. Django sozlamalari — settings.py
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],                                   # templates ulash
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
