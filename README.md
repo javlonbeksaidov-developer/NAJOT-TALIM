@@ -72,8 +72,11 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 44 | lesson44 | Telegram Bot | Pythonda pyTelegramBotAPI kutubxona orqali telegram bot | 18.09.2026 |
 | 45 | lesson45 | Telegram Bot | Telegram Bot, content types, inline buttons | 21.09.2026 |
 | 46 | lesson46 | EXAM | 3-4-oy uchun imtihon | 23.09.2026 |
-| 47 | lesson47 | Django | Django bilan tanishuv | 25.09.2026 |
-| 48 | lesson48 | Django | startproject, startapp, MVT (Model-Veiw-Template) | 28.09.2026 |
-| 49 | lesson49 | Django | Models. Django ORM | 30.09.2026 |
-| 50 | lesson50 |-|-|-|
-
+| 47 | lesson47 | Django Fremwork | Django bilan tanishuv | 25.09.2026 |
+| 48 | lesson48 | Django Fremwork | startproject, startapp, MVT (Model-Veiw-Template) | 28.09.2026 |
+| 49 | lesson49 | Django Fremwork | Models. Django ORM | 30.09.2026 |
+| 50 | lesson50 | Django Fremwork | Practice | 02.10.2026 |
+| 51 | lesson51 | Django Fremwork | Templates (HTML) | 05.10.2026 |
+| 52 | lesson52 | Django Fremwork | Static Files (CSS, JS) | 07.10.2026 |
+| 53 | lesson53 | Django Fremwork |-|-|
+| 54 | lesson54 |  |-|-|

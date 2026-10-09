@@ -1,0 +1,50 @@
+Django Framework’da HTML bilan ishlash
+1. HTML nima?
+
+HTML (HyperText Markup Language) — veb-sahifalarning tuzilishini yaratish uchun ishlatiladigan belgilash tili. HTML yordamida sahifaga sarlavha, matn, rasm, havola, jadval, forma va tugmalar joylashtiriladi.
+
+Django framework’da HTML foydalanuvchiga ko‘rinadigan sahifalarni yaratish uchun ishlatiladi. Django HTML fayllarini odatda Templates deb ataladigan papkada saqlaydi.
+
+Masalan, login, ro‘yxatdan o‘tish, bosh sahifa va profil sahifalari HTML shablonlari orqali yaratiladi.
+
+2. Django’da HTML fayllarining tuzilishi
+
+Django loyihasida HTML shablonlari odatda quyidagicha tashkil qilinadi:
+
+myproject/
+  myapp/
+    views.py
+    urls.py
+  templates/
+    login.html
+    register.html
+    home.html
+
+
+3. HTML’ning asosiy qoidalari
+
+HTML teglari odatda ochuvchi va yopuvchi qismlardan tashkil topadi.
+
+<h1> — asosiy sarlavha.
+<p> — matn yoki paragraf.
+<a> — boshqa sahifaga o‘tish uchun havola.
+href — havola manzilini belgilovchi atribut.
+
+
+4. Django HTML shablonlarida ko‘p ishlatiladigan teglar
+
+Sintaksis                       Vazifasi
+
+{{ name }}                      O‘zgaruvchi qiymatini chiqarish
+{% if condition %}              Shartni tekshirish
+{% else %}                      Muqobil shart qismi
+{% endif %}                     if blokini yopish
+{% for item in items %}         Siklni boshlash
+{% endfor %}                    Siklni yopish
+{% url 'name' %}                URL nomi orqali havola yaratish
+{% load static %}               Static teglarini yuklash
+{% static 'css/style.css' %}    Static fayl manzilini yaratish
+{% extends 'base.html' %}       Bosh shablondan meros olish
+{% block content %}             Shablonning o‘zgaruvchan qismini belgilash
+{% include 'navbar.html' %}     Boshqa shablonni qo‘shish
+{% csrf_token %}                Forma uchun CSRF tokenini chiqarish
