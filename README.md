@@ -78,5 +78,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 50 | lesson50 | Django Fremwork | Practice | 02.10.2026 |
 | 51 | lesson51 | Django Fremwork | Templates (HTML) | 05.10.2026 |
 | 52 | lesson52 | Django Fremwork | Static Files (CSS, JS) | 07.10.2026 |
-| 53 | lesson53 | Django Fremwork |-|-|
-| 54 | lesson54 |  |-|-|
+| 53 | lesson53 | Django Fremwork | Practice % Form bilan ishlash | 09.10.2026 |
+| 54 | lesson54 |-|-|-|
