@@ -80,6 +80,6 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 52 | lesson52 | Django Fremwork | Static Files (CSS, JS) | 07.10.2026 |
 | 53 | lesson53 | Django Fremwork | Practice % Form bilan ishlash | 09.10.2026 |
 | 54 | lesson54 | Django Fremwork | Models bilan ishlash. ImageField, CharField, IntegerField, DateField | 12.10.2026 |
-| 54 | lesson55 | Django Fremwork |-| 14.10.2026 |
+| 54 | lesson55 | Django Fremwork | Practice | 14.10.2026 |
 | 54 | lesson56 | Django Fremwork |-| 16.10.2026 |
 | 54 | lesson57 |-|-|-|
