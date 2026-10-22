@@ -83,5 +83,5 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 55 | lesson55 | Django Fremwork | Practice | 14.10.2026 |
 | 56 | lesson56 | Django Fremwork | Practice | 16.10.2026 |
 | 57 | lesson57 | Django Fremwork | Login, Register, Logout | 19.10.2026 |
-| 58 | lesson58 |-|-| 21.10.2026 |
+| 58 | lesson58 | Django Fremwork | Login, Register, Logout | 21.10.2026 |
 | 59 | lesson59 |-|-|-|
