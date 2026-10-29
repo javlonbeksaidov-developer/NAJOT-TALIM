@@ -85,5 +85,6 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 57 | lesson57 | Django Fremwork | Login, Register, Logout | 19.10.2026 |
 | 58 | lesson58 | Django Fremwork | Login, Register, Logout | 21.10.2026 |
 | 59 | lesson59 | Django Fremwork | Practice | 23.10.2026 |
-| 59 | lesson60 | Django Fremwork | SMTP (Simple Mail Transfer Protokol). Email jo'natish. | 26.10.2026 |
-| 59 | lesson61 |-|-|-|
+| 60 | lesson60 | Django Fremwork | SMTP (Simple Mail Transfer Protokol). Email jo'natish. | 26.10.2026 |
+| 61 | lesson61 | Django Fremwork | Practice | 28.10.2026 |
+| 62 | lesson62 |-|-|-|
