@@ -87,4 +87,7 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 59 | lesson59 | Django Fremwork | Practice | 23.10.2026 |
 | 60 | lesson60 | Django Fremwork | SMTP (Simple Mail Transfer Protokol). Email jo'natish. | 26.10.2026 |
 | 61 | lesson61 | Django Fremwork | Practice | 28.10.2026 |
-| 62 | lesson62 |-|-|-|
+| 62 | lesson62 | Django Fremwork | View, ListView, DetailView, CreateView, UpdateView, DeleteView | 30.10.2026 |
+| 63 | lesson63 | Django Fremwork | Practice, LoginRequiredMixin, paginate_by, get_queryset, get_context_data | 02.11.2026 |
+| 64 | lesson64 |-|-|-|
+| 65 | lesson65 |-|-|-|
