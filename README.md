@@ -95,7 +95,7 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 67 | lesson67 | Django Fremwork | COOKIES bilan ishlash | 11.11.2026 |
 | 68 | lesson68 | Django Fremwork | ModelForm, View, ListView, DetailView, CreateView, UpdateView, DeleteView | 13.11.2026 |
 | 69 | lesson69 | Django Fremwork | Practice | 16.11.2026 |
-| 69 | lesson69 | Django Fremwork |-|-|
+| 70 | lesson70 | Django Fremwork | Market POS project | 18.11.2026 |
 | 69 | lesson69 | Django Fremwork |-|-|
 | 69 | lesson69 | Django Fremwork |-|-|
 | 69 | lesson69 | Django Fremwork |-|-|
