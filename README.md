@@ -98,4 +98,4 @@ Bu repository kurs davomida yozilgan kodlar, amaliy mashg'ulotlar, uy vazifalari
 | 70 | lesson70 | Django Fremwork | Practice. Market POS project | 18.11.2026 |
 | 71 | lesson71 | Django Fremwork | Practice. Market POS project | 20.11.2026 |
 | 72 | lesson72 | Django Fremwork | Practice. Market POS project | 23.11.2026 |
-| 73 | lesson73 | Django Fremwork |-|-|
+| 73 | lesson73 | Django Fremwork | Practice. Market POS project | 25.11.2026 |
