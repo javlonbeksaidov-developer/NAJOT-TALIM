@@ -1,0 +1,16 @@
+Pythonda foydalanuvchi bilan muloqot qilish uchun asosiy ikki funksiya ishlatiladi: ma'lumotni ekranga chiqarish uchun print() va foydalanuvchidan ma'lumot olish uchun input().
+
+1. print() — Ma'lumotni chiqarish
+print() funksiyasi matn, son yoki o'zgaruvchi qiymatlarini terminal/konsolga chiqaradi.
+
+ism = "Javlon"
+yosh = 22
+
+print("Salom,", ism)
+print("Yoshi:", yosh)
+
+2. input() — Ma'lumot kiritish
+input() dasturni to'xtatib, foydalanuvchi klaviaturada matn kiritib Enter bosishini kutadi.
+
+ism = input("Ismingizni kiriting: ")
+print(f"Xush kelibsiz, {ism}!")
