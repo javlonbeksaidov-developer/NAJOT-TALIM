@@ -6,13 +6,66 @@
 
 <hr style="border: 0; height: 3px; background: #009650; border-radius: 10px;">
 
-## 🎓 Education & Certification
+# 📌 Eng ko'p ishlatiladigan Git buyruqlari
 
-| Full Name | Education Center | Course | Start Date | End Date | Certificate ID |
-|:---|:---|:---:|:---:|:---:|:---|
-| Javlonbek Saidov | Najot Ta'lim | Backend Python | 2026-05-11 | — | — |
+## 🔧 Sozlash va boshlash
 
-## 🎓 Education & Certification
+| Buyruq | Tavsif |
+|--------|--------|
+| `git config --global user.name "Ism"` | Foydalanuvchi ismini o'rnatish |
+| `git config --global user.email "email@example.com"` | Email manzilni o'rnatish |
+| `git init` | Yangi Git repozitoriy yaratish |
+| `git clone <url>` | Masofaviy repozitoriyni nusxalash |
+
+## 📝 Asosiy ishlar
+
+| Buyruq | Tavsif |
+|--------|--------|
+| `git status` | Fayllar holatini ko'rish |
+| `git add <fayl>` | Faylni staging'ga qo'shish |
+| `git add .` | Barcha o'zgarishlarni staging'ga qo'shish |
+| `git commit -m "xabar"` | O'zgarishlarni saqlash (commit) |
+| `git commit -am "xabar"` | Kuzatilayotgan fayllarni add qilib, commit qilish |
+| `git diff` | O'zgarishlarni ko'rish |
+| `git log` | Commitlar tarixini ko'rish |
+| `git log --oneline` | Tarixni qisqa ko'rinishda ko'rish |
+
+## 🌿 Branch (shoxlar) bilan ishlash
+
+| Buyruq | Tavsif |
+|--------|--------|
+| `git branch` | Barcha branchlar ro'yxati |
+| `git branch <nom>` | Yangi branch yaratish |
+| `git checkout <nom>` | Branchga o'tish |
+| `git checkout -b <nom>` | Yangi branch yaratib, unga o'tish |
+| `git switch <nom>` | Branchga o'tish (yangi usul) |
+| `git merge <nom>` | Branchni joriy branchga birlashtirish |
+| `git branch -d <nom>` | Branchni o'chirish |
+
+## 🌐 Masofaviy repozitoriy (GitHub)
+
+| Buyruq | Tavsif |
+|--------|--------|
+| `git remote add origin <url>` | Masofaviy repozitoriyni ulash |
+| `git remote -v` | Ulangan remote'larni ko'rish |
+| `git push origin <branch>` | O'zgarishlarni GitHub'ga yuborish |
+| `git push -u origin main` | Birinchi marta push qilish va branchni bog'lash |
+| `git pull` | Masofaviy o'zgarishlarni olib, birlashtirish |
+| `git fetch` | O'zgarishlarni yuklab olish (birlashtirmasdan) |
+
+## ⏪ Bekor qilish va qaytarish
+
+| Buyruq | Tavsif |
+|--------|--------|
+| `git restore <fayl>` | Fayldagi o'zgarishlarni bekor qilish |
+| `git restore --staged <fayl>` | Faylni staging'dan chiqarish |
+| `git reset --soft HEAD~1` | Oxirgi commitni bekor qilish (o'zgarishlar saqlanadi) |
+| `git reset --hard HEAD~1` | Oxirgi commitni va o'zgarishlarni butunlay o'chirish |
+| `git revert <commit>` | Commitni bekor qiluvchi yangi commit yaratish |
+| `git stash` | O'zgarishlarni vaqtincha yashirish |
+| `git stash pop` | Yashirilgan o'zgarishlarni qaytarish |
+
+> ⚠️ **Diqqat:** `git reset --hard` o'zgarishlarni qaytarib bo'lmaydigan tarzda o'chiradi. Ehtiyot bo'ling!
 
 <hr style="border: 0; height: 3px; background: #009650; border-radius: 10px;">
 
