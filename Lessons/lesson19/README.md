@@ -19,6 +19,29 @@ Bu darsda ikki turdagi fayl bilan ishlaymiz:
 
 <hr style="border: 0; height: 3px; background: #009650; border-radius: 10px;">
 
+# database.py 
+
+```python
+import json
+
+FILENAME = "database.json"
+
+
+def load():
+    try:
+        with open(FILENAME, "r") as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        data = []
+
+    return data
+
+
+def save(data):
+    with open(FILENAME, "w") as file:
+        json.dump(data, file, indent=4)
+```
+
 # 📂 Faylni ochish: `open()`
 
 **Sintaksis:**
